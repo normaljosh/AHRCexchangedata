@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
         }
+
+    //gsgfd
     /** Called when the user clicks the See Database button */
     public void seedatabase(View view) {
         Intent intent = new Intent(this, AndroidDatabaseManager.class);
