@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AHRC client data</string>
+    <string name="male">Male </string>
+    <string name="female">Female </string>
+    <string name="other">Other </string>
+    <string name="white">White </string>
+    <string name="black">Black </string>
+    <string name="hispanic">Hispanic </string>
+    <string name="display">Gender: %1$s Race: %2$s </string>
+</resources>
