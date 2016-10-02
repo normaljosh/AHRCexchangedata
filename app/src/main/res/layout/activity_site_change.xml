@@ -13,12 +13,14 @@
         android:layout_height="wrap_content"
         android:id="@+id/SiteGroup"
         >
-    <RadioButton
+
+        <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="3rd &amp; Comal"
         android:id="@+id/Comal"
         android:layout_alignParentTop="true"
+        android:onClick="onSiteButtonClicked"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="58dp"
@@ -32,7 +34,8 @@
         android:layout_below="@+id/Comal"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:checked="false" />
+        android:checked="false"
+        android:onClick="onSiteButtonClicked" />
 
     <RadioButton
         android:layout_width="wrap_content"
@@ -42,7 +45,8 @@
         android:layout_below="@+id/Mars"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:checked="false" />
+        android:checked="false"
+        android:onClick="onSiteButtonClicked" />
 
     <RadioButton
         android:layout_width="wrap_content"
@@ -52,7 +56,8 @@
         android:layout_below="@+id/Montopolis"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:checked="false" />
+        android:checked="false"
+        android:onClick="onSiteButtonClicked" />
 
     <RadioButton
         android:layout_width="wrap_content"
@@ -62,7 +67,8 @@
         android:layout_below="@+id/Peer"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:checked="false" />
+        android:checked="false"
+        android:onClick="onSiteButtonClicked" />
 
     <RadioButton
         android:layout_width="wrap_content"
@@ -72,7 +78,8 @@
         android:layout_below="@+id/Phases"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:checked="false" />
+        android:checked="false"
+        android:onClick="onSiteButtonClicked" />
 
     <RadioButton
         android:layout_width="wrap_content"
@@ -82,7 +89,8 @@
         android:layout_below="@+id/Pickle"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:checked="false" />
+        android:checked="false"
+        android:onClick="onSiteButtonClicked" />
 
     <RadioButton
         android:layout_width="wrap_content"
@@ -92,7 +100,8 @@
         android:layout_below="@+id/Planet"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:checked="false" />
+        android:checked="false"
+        android:onClick="onSiteButtonClicked" />
     </RadioGroup>
 
     <TextView
@@ -103,5 +112,38 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="21dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Site"
+        android:id="@+id/EnterSite"
+        android:layout_below="@+id/SiteGroup"
+        android:layout_toRightOf="@+id/textView7"
+        android:layout_toEndOf="@+id/textView7"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="7dp"
+        android:onClick="EnterSite" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Site"
+        android:id="@+id/textView8"
+        android:layout_alignBottom="@+id/EnterSite"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Staff"
+        android:id="@+id/EnterStaff"
+        android:layout_below="@+id/EnterSite"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="16dp"
+        android:onClick="EnterStaff"
+        android:nestedScrollingEnabled="true" />
 
 </RelativeLayout>

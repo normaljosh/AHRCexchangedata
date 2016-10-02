@@ -20,7 +20,7 @@ public class DBEnter extends AppCompatActivity {
         setContentView(R.layout.activity_dbenter);
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            String staff = "staff";
+            String staff = SiteHolder.getInstance().getstaffhold();
             String site = SiteHolder.getInstance().getsitehold();
             String gender = extras.getString("genderchosen");
             String race = extras.getString("racechosen");
@@ -30,7 +30,7 @@ public class DBEnter extends AppCompatActivity {
             String type = "type";
             String ins = "ins";
             TextView text = (TextView) findViewById(R.id.textView6);
-            String display = "Race: " + race + " Gender:" + gender + "Site:" + site + "Needles in: " + needles_in + "Needles out:" + needles_out;
+            String display = "Race: " + race + " Gender:" + gender + "Staff:" + staff + "Site:" + site + "Needles in: " + needles_in + "Needles out:" + needles_out;
             text.setText(display);
 
         //initialize database

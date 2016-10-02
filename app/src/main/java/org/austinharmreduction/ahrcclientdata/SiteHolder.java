@@ -15,4 +15,7 @@ public class SiteHolder {
     public static SiteHolder getInstance() {
         return ourInstance;
     }
+    private SiteHolder() {
+        // Exists only to defeat instantiation.
+    }
 }

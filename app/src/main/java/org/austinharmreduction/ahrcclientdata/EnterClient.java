@@ -1,9 +1,13 @@
 package org.austinharmreduction.ahrcclientdata;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -33,8 +37,12 @@ public class EnterClient extends AppCompatActivity {
                     gender = "Female";
                 break;
             case R.id.Other:
+                RadioButton fish = (RadioButton) findViewById(R.id.Other);
                 if (checked)
-                    gender = "Other";
+                    //set this as the radiobutton to be changed by the showinput function
+                    buttonstore.getInstance().setbuttonhold(fish);
+                    ShowInput();
+                gender = "reset"; //this lets us pass the new gender when nextscreen is clicked
                 break;
 
         }
@@ -60,22 +68,57 @@ public class EnterClient extends AppCompatActivity {
                 if (checked)
                     race = "Hispanic";
                 break;
+            case R.id.OtherRace:
+                RadioButton fish = (RadioButton) findViewById(R.id.OtherRace);
+                if (checked)
+                    buttonstore.getInstance().setbuttonhold(fish);//set this as the radiobutton to be changed by the showinput function
+                ShowInput();
+                race = "reset";
+                break;
 
         }
 }
-    //display gender button
-    public void displaygender(View view) {
-        //display the gender string when clicked
-        TextView text = (TextView) findViewById(R.id.textView);
-        String display = "Race: " + race + " Gender:" + gender;
-        text.setText(display);
-    }
 
     /** Called when the user clicks the Send button */
     public void NextScreen(View view) {
         Intent intent = new Intent(this, needles.class);
+        RadioButton button = (RadioButton) findViewById(R.id.Other);
+        RadioButton RaceButton = (RadioButton) findViewById(R.id.OtherRace);
+        if  (gender == "reset")
+            gender = button.getText().toString();
+        if (race == "reset")
+            race = RaceButton.getText().toString();
         intent.putExtra("genderchosen", gender); // pass gender to the next Activity
         intent.putExtra("racechosen", race); // pass race to the next Activity
         startActivity(intent);
+    }
+//this function serves to change the input text for an "other" button, and store that as the item
+    protected void ShowInput() {
+
+        // get prompts.xml view
+        LayoutInflater layoutInflater = LayoutInflater.from(EnterClient.this);
+        View promptView = layoutInflater.inflate(R.layout.staffinput, null);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(EnterClient.this);
+        alertDialogBuilder.setView(promptView);
+
+        final EditText editText = (EditText) promptView.findViewById(R.id.edittext);
+        // setup a dialog window
+        alertDialogBuilder.setCancelable(false)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    RadioButton button = buttonstore.getInstance().getbuttonhold();
+                    public void onClick(DialogInterface dialog, int id) {
+                        button.setText(editText.getText());
+                    }
+                })
+                .setNegativeButton("Cancel",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+        // create an alert dialog
+        AlertDialog alert = alertDialogBuilder.create();
+        alert.show();
     }
 }
