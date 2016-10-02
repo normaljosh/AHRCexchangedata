@@ -2,12 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.austinharmreduction.ahrcclientdata">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".EmailCSV" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -15,11 +18,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".needles"></activity>
-        <activity android:name=".EnterClient"></activity>
-        <activity android:name=".DBEnter"></activity>
-        <activity android:name="org.austinharmreduction.ahrcclientdata.AndroidDatabaseManager"
-            android:theme="@style/Theme.AppCompat.Light"/>
+        <activity android:name=".needles" />
+        <activity android:name=".EnterClient" />
+        <activity android:name=".DBEnter" />
+        <activity
+            android:name=".AndroidDatabaseManager"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity android:name=".SiteChange"></activity>
     </application>
 
 </manifest>

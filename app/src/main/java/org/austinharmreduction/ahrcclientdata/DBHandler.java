@@ -21,23 +21,38 @@ public class DBHandler extends SQLiteOpenHelper {
     // Database Name
     private static final String DATABASE_NAME = "clientInfo";
     //Table name
-    private static final String TABLE_CLIENTS = "clients";
+    private static final String TABLE_CLIENTS = "participants";
     // Column names
     private static final String KEY_ID = "id";
-    private static final String KEY_RACE = "race";
-    private static final String KEY_GENDER = "gender";
-    private static final String KEY_NEEDLES_IN = "needles_in";
-    private static final String KEY_NEEDLES_OUT = "needles_out";
+    private static final String KEY_DATE = "DateTime";
+    private static final String KEY_STAFF = "Staff";
+    private static final String KEY_SITE = "Site";
+    private static final String KEY_RACE = "Race";
+    private static final String KEY_GENDER = "Sex";
+    private static final String KEY_AGE = "Age";
+    private static final String KEY_NEEDLES_IN = "Units_In";
+    private static final String KEY_NEEDLES_OUT = "Units_Out";
+    private static final String KEY_TYPE = "Type";
+    private static final String KEY_INS = "Insurance";
     public DBHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
     //create table
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_CLIENTS + "("
-        + KEY_ID + " INTEGER PRIMARY KEY," + KEY_RACE + " TEXT," + KEY_GENDER + " TEXT," +
-         KEY_NEEDLES_IN + " INTEGER," + KEY_NEEDLES_OUT + " INTEGER" +
-        ")";
+        String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_CLIENTS
+                + "(" + KEY_ID + " INTEGER PRIMARY KEY,"
+                + KEY_DATE + " DATETIME DEFAULT (DATETIME(CURRENT_TIMESTAMP, 'LOCALTIME')),"
+                + KEY_STAFF + " TEXT,"
+                + KEY_SITE + " TEXT,"
+                + KEY_GENDER + " TEXT,"
+                + KEY_RACE + " TEXT,"
+                + KEY_AGE + " TEXT,"
+                + KEY_NEEDLES_IN + " INTEGER,"
+                + KEY_NEEDLES_OUT + " INTEGER,"
+                + KEY_TYPE + " TEXT,"
+                + KEY_INS + " TEXT"
+                + ")";
         db.execSQL(CREATE_CONTACTS_TABLE);
     }
     @Override
@@ -52,29 +67,34 @@ public class DBHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(KEY_RACE, client.getrace()); // client Race
+        values.put(KEY_STAFF, client.getstaff()); // client Race
+        values.put(KEY_SITE, client.getsite()); // client Race
         values.put(KEY_GENDER, client.getgender()); // client Gender
+        values.put(KEY_RACE, client.getrace()); // client Race
+        values.put(KEY_AGE, client.getage()); // client Race
         values.put(KEY_NEEDLES_IN, client.getneedles_in()); // client Needles_in
         values.put(KEY_NEEDLES_OUT, client.getneedles_out()); // client Needles_out
+        values.put(KEY_TYPE, client.gettype()); // client Race
+        values.put(KEY_INS, client.getins()); // client Race
     // Inserting Row
         db.insert(TABLE_CLIENTS, null, values);
         db.close(); // Closing database connection
     }
 
-    // Getting one client
+ /*   // Getting one client... doesn't work right now and will need to be edited
     public ClientFormat getclient(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.query(TABLE_CLIENTS, new String[] { KEY_ID, KEY_RACE,
-                        KEY_GENDER, KEY_NEEDLES_IN, KEY_NEEDLES_OUT }, KEY_RACE + "=?",
+        Cursor cursor = db.query(TABLE_CLIENTS, new String[] { KEY_ID, KEY_DATE, KEY_STAFF, KEY_SITE,
+                KEY_GENDER, KEY_RACE, KEY_AGE, KEY_NEEDLES_IN, KEY_NEEDLES_OUT, KEY_TYPE, KEY_INS }, KEY_RACE+ "=?",
                 new String[] { String.valueOf(id) }, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
         ClientFormat oneclient = new ClientFormat(Integer.parseInt(cursor.getString(0)),
-                cursor.getString(1), cursor.getString(2), (cursor.getString(3)),
-                (cursor.getString(4)));
+                cursor.getString(1), cursor.getString(2), (cursor.getString(3)), (cursor.getString(4)),
+                (cursor.getString(5)));
 // return client
         return oneclient;
-    }
+    }*/
 
     // Getting All Clients
     public List<ClientFormat> getAllClients() {
@@ -88,10 +108,16 @@ public class DBHandler extends SQLiteOpenHelper {
                 do {
                     ClientFormat client = new ClientFormat();
                     client.setid(Integer.parseInt(cursor.getString(0)));
-                    client.setrace(cursor.getString(1));
-                    client.setgender(cursor.getString(2));
-                    client.setneedles_in(cursor.getString(3));
-                    client.setneedles_out(cursor.getString(4));
+                    client.setdate(cursor.getString(1));
+                    client.setstaff(cursor.getString(2));
+                    client.setsite(cursor.getString(3));
+                    client.setgender(cursor.getString(4));
+                    client.setrace(cursor.getString(5));
+                    client.setage(cursor.getString(6));
+                    client.setneedles_in(cursor.getString(7));
+                    client.setneedles_out(cursor.getString(8));
+                    client.settype(cursor.getString(9));
+                    client.setins(cursor.getString(10));
     // Adding contact to list
                     ClientList.add(client);
                 } while (cursor.moveToNext());
@@ -109,8 +135,9 @@ public class DBHandler extends SQLiteOpenHelper {
         cursor.close();
 // return count
         return cursor.getCount();
-    }
-    // Updating a Client
+    }/*
+
+    // Updating a Client -- not used and will need to add other terms
     public int updateClient(ClientFormat client) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -129,7 +156,7 @@ public class DBHandler extends SQLiteOpenHelper {
         db.delete(TABLE_CLIENTS, KEY_ID + " = ?",
                 new String[] { String.valueOf(client.getid()) });
         db.close();
-    }
+    }*/
 
     //taken from databasemanager
     public ArrayList<Cursor> getData(String Query){

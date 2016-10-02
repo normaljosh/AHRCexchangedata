@@ -30,4 +30,14 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, EnterClient.class);
         startActivity(intent); //go to enter client
     }
+    /** Called when the user clicks the write to csv button */
+    public void csvwrite(View view) {
+        Intent intent = new Intent(this, EmailCSV.class);
+        startActivity(intent); //go to enter client
+    }
+    /** Called when the user clicks the site change button */
+    public void SiteChange(View view) {
+        Intent intent = new Intent(this, SiteChange.class);
+        startActivity(intent); //go to site change
+    }
 }
