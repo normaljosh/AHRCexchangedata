@@ -12,7 +12,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Needles In"
+        android:text="Needles In    "
         android:id="@+id/needlesin"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
@@ -29,22 +29,22 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ten"
-            android:id="@+id/Ten_in"
+            android:text="@string/in1"
+            android:id="@+id/in1"
             android:checked="false"
             android:onClick="onInButtonClicked"
             android:layout_below="@+id/needlesin"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
-    <RadioButton
+        <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Twenty"
-        android:id="@+id/Twenty_in"
+        android:text="@string/in2"
+        android:id="@+id/in2"
         android:checked="false"
         android:onClick="onInButtonClicked"
-        android:layout_below="@+id/Ten_in"
+        android:layout_below="@+id/in1"
         android:layout_alignParentLeft="true" />
 
 
@@ -52,69 +52,413 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Thirty"
-            android:id="@+id/Thirty_in"
+            android:text="@string/in3"
+            android:id="@+id/in3"
             android:checked="false"
             android:onClick="onInButtonClicked"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/Twenty_in_in"
+            android:layout_below="@+id/in2"
             android:layout_alignParentLeft="true" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/in4"
+            android:id="@+id/in4"
+            android:checked="false"
+            android:onClick="onInButtonClicked"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/in3"
+            android:layout_alignParentLeft="true" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/in5"
+            android:id="@+id/in5"
+            android:checked="false"
+            android:onClick="onInButtonClicked"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/in4"
+            android:layout_alignParentLeft="true" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/in6"
+            android:id="@+id/in6"
+            android:checked="false"
+            android:onClick="onInButtonClicked"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/in5"
+            android:layout_alignParentLeft="true" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/in7"
+            android:id="@+id/in7"
+            android:checked="false"
+            android:onClick="onInButtonClicked"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/in6"
+            android:layout_alignParentLeft="true" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/in8"
+            android:id="@+id/in8"
+            android:checked="false"
+            android:onClick="onInButtonClicked"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/in7"
+            android:layout_alignParentLeft="true" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/in9"
+            android:id="@+id/in9"
+            android:checked="false"
+            android:onClick="onInButtonClicked"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/in8"
+            android:layout_alignParentLeft="true" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/in10"
+            android:id="@+id/in10"
+            android:checked="false"
+            android:onClick="onInButtonClicked"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/in9"
+            android:layout_alignParentLeft="true"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/in11"
+            android:id="@+id/in11"
+            android:checked="false"
+            android:onClick="onInButtonClicked"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/in10"
+            android:layout_alignParentLeft="true"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/other"
+            android:id="@+id/otherin"
+            android:checked="false"
+            android:onClick="onInButtonClicked"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/in11"
+            android:layout_alignParentLeft="true"/>
+
+
+
+
+
 
     </RadioGroup>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Needles Out"
+        android:text="Needles Out       "
         android:id="@+id/needlesout"
-        android:layout_below="@+id/InGroup"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+
+        android:layout_alignTop="@+id/needlesin"
+        android:layout_toRightOf="@+id/needlesin"
+        android:layout_toEndOf="@+id/needlesin"
+        android:layout_marginRight="10dp"/>
 
     <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/OutGroup"
         android:layout_below="@+id/needlesout"
+        android:layout_toRightOf="@+id/needlesin"
+        android:layout_toEndOf="@+id/needlesin"
+        android:layout_marginRight="10dp"
         >
 
 
-        <RadioButton android:id="@+id/Ten_out"
+        <RadioButton android:id="@+id/out1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ten"
+            android:text="@string/out1"
             android:onClick="onOutButtonClicked"
             android:layout_below="@+id/needlesout"
             android:layout_centerHorizontal="true" />
-
-        <RadioButton android:id="@+id/Twenty_out"
+        <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Twenty"
-            android:onClick="onOutButtonClicked"
+            android:text="@string/out2"
+            android:id="@+id/out2"
             android:checked="false"
-            android:layout_below="@+id/Ten"
-            />
+            android:onClick="onOutButtonClicked"
+            android:layout_below="@+id/out1"
+            android:layout_alignParentLeft="true" />
+
+
 
         <RadioButton
-            android:id="@+id/Thirty_out"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Thirty"
+            android:text="@string/out3"
+            android:id="@+id/out3"
+            android:checked="false"
             android:onClick="onOutButtonClicked"
-            android:layout_below="@+id/Twenty_out"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/out2"
+            android:layout_alignParentLeft="true" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/out4"
+            android:id="@+id/out4"
+            android:checked="false"
+            android:onClick="onOutButtonClicked"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/out3"
+            android:layout_alignParentLeft="true" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/out5"
+            android:id="@+id/out5"
+            android:checked="false"
+            android:onClick="onOutButtonClicked"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/out4"
+            android:layout_alignParentLeft="true" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/out6"
+            android:id="@+id/out6"
+            android:checked="false"
+            android:onClick="onOutButtonClicked"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/out5"
+            android:layout_alignParentLeft="true" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/out7"
+            android:id="@+id/out7"
+            android:checked="false"
+            android:onClick="onOutButtonClicked"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/out6"
+            android:layout_alignParentLeft="true" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/out8"
+            android:id="@+id/out8"
+            android:checked="false"
+            android:onClick="onOutButtonClicked"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/out7"
+            android:layout_alignParentLeft="true" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/out9"
+            android:id="@+id/out9"
+            android:checked="false"
+            android:onClick="onOutButtonClicked"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/out8"
+            android:layout_alignParentLeft="true" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/out10"
+            android:id="@+id/out10"
+            android:checked="false"
+            android:onClick="onOutButtonClicked"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/out9"
+            android:layout_alignParentLeft="true"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/out11"
+            android:id="@+id/out11"
+            android:checked="false"
+            android:onClick="onOutButtonClicked"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/out10"
+            android:layout_alignParentLeft="true"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/other"
+            android:id="@+id/otherout"
+            android:checked="false"
+            android:onClick="onOutButtonClicked"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/out11"
+            android:layout_alignParentLeft="true"/>
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Type           "
+        android:id="@+id/Type"
+
+        android:layout_alignTop="@+id/needlesout"
+        android:layout_toRightOf="@+id/needlesout"
+        android:layout_toEndOf="@+id/needlesout"
+        android:layout_marginRight="10dp"/>
+
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/TypeGroup"
+        android:layout_below="@+id/needlesout"
+        android:layout_toRightOf="@+id/needlesout"
+        android:layout_toEndOf="@+id/needlesout"
+        android:layout_marginRight="10dp"
+        >
+
+
+        <RadioButton android:id="@+id/type1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/type1"
+            android:onClick="onTypeButtonClicked"
+            android:layout_below="@+id/needlesout"
             android:layout_centerHorizontal="true" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/type2"
+            android:id="@+id/type2"
+            android:checked="false"
+            android:onClick="onTypeButtonClicked"
+            android:layout_below="@+id/type1"
+            android:layout_alignParentLeft="true" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/type3"
+            android:id="@+id/type3"
+            android:checked="false"
+            android:onClick="onTypeButtonClicked"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/type2"
+            android:layout_alignParentLeft="true" />
+
     </RadioGroup>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter to database"
+        android:text="Save &amp; Enter new participant"
         android:id="@+id/DBScreen"
         android:onClick="DBScreen"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_above="@+id/mainmenu"
+        android:layout_alignRight="@+id/InGroup"
+        android:layout_alignEnd="@+id/InGroup" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Insurance       "
+        android:id="@+id/insurance"
+        android:layout_below="@+id/TypeGroup"
+        android:layout_toRightOf="@+id/needlesout"
+        android:layout_toEndOf="@+id/needlesout"
+        android:layout_marginRight="10dp"/>
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/insuranceGroup"
+        android:layout_below="@+id/insurance"
+        android:layout_toRightOf="@+id/needlesout"
+        android:layout_toEndOf="@+id/needlesout"
+        android:layout_marginRight="10dp"
+        >
+        <RadioButton android:id="@+id/ins1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ins1"
+            android:onClick="onInsButtonClicked"
+            android:layout_below="@+id/insurance"
+            android:layout_centerHorizontal="true" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ins2"
+            android:id="@+id/ins2"
+            android:checked="false"
+            android:onClick="onInsButtonClicked"
+            android:layout_below="@+id/ins1"
+            android:layout_alignParentLeft="true" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ins3"
+            android:id="@+id/ins3"
+            android:checked="false"
+            android:onClick="onInsButtonClicked"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/ins2"
+            android:layout_alignParentLeft="true" />
 
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ins4"
+            android:id="@+id/ins4"
+            android:checked="false"
+            android:onClick="onInsButtonClicked"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/ins3"
+            android:layout_alignParentLeft="true" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ins5"
+            android:id="@+id/ins5"
+            android:checked="false"
+            android:onClick="onInsButtonClicked"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/ins4"
+            android:layout_alignParentLeft="true" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/other"
+            android:id="@+id/otherins"
+            android:checked="false"
+            android:onClick="onInsButtonClicked"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/ins5"
+            android:layout_alignParentLeft="true"/>
+    </RadioGroup>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save &amp; Go To Main Menu"
+        android:id="@+id/mainmenu"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/DBScreen"
+        android:layout_alignStart="@+id/DBScreen"
+        android:onClick="mainmenu" />
 
 </RelativeLayout>

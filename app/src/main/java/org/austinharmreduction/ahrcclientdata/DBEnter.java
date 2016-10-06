@@ -24,13 +24,16 @@ public class DBEnter extends AppCompatActivity {
             String site = SiteHolder.getInstance().getsitehold();
             String gender = extras.getString("genderchosen");
             String race = extras.getString("racechosen");
-            String age = "age";
+            String age = extras.getString("agechosen");
             String needles_in = extras.getString("inchosen");
             String needles_out = extras.getString("outchosen");
-            String type = "type";
-            String ins = "ins";
+            String type = extras.getString("typechosen");
+            String ins = extras.getString("inschosen");
+            boolean mainmenu = extras.getBoolean("mainmenu");
             TextView text = (TextView) findViewById(R.id.textView6);
-            String display = "Race: " + race + " Gender:" + gender + "Staff:" + staff + "Site:" + site + "Needles in: " + needles_in + "Needles out:" + needles_out;
+            String display = "Race: " + race + " Gender:" + gender + "Staff:" + staff + "Site:" + site
+                    + "Needles in: " + needles_in + "Needles out:" + needles_out + "Age:" + age
+                    + "Type:" + type + "insurance:" + ins + "mainmenu " + mainmenu;
             text.setText(display);
 
         //initialize database
@@ -49,7 +52,11 @@ public class DBEnter extends AppCompatActivity {
                     + client.getneedles_out();
             // Writing clients  to log
             Log.d("Client: : ", log);
-
+            Intent path1 = new Intent(this, EnterClient.class);
+            Intent path2 = new Intent(this, MainActivity.class);
+            if (mainmenu)
+            startActivity(path2);
+            else startActivity(path1);
         }
 
 

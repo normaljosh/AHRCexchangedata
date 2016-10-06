@@ -58,6 +58,7 @@ public class EmailCSV extends AppCompatActivity {
                             + client.gettype() + ","
                             + client.getins() ;
                     // Writing clients  to log
+
                     out.write(line.getBytes());
 
                 }

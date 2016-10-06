@@ -1,5 +1,6 @@
 package org.austinharmreduction.ahrcclientdata;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -27,6 +29,21 @@ public class MainActivity extends AppCompatActivity {
 
     /** Called when the user clicks the Enter Client button */
     public void Enter(View view) {
+        String staff = SiteHolder.getInstance().getstaffhold();
+        String site = SiteHolder.getInstance().getsitehold();
+        Context context = getApplicationContext();
+        int duration = Toast.LENGTH_SHORT;
+        if (site == null){
+            Toast toast = Toast.makeText(context, "please enter site", duration);
+            toast.show();
+            return;
+        }
+        if (staff == null){
+            Toast toast = Toast.makeText(context, "please enter data inputer", duration);
+            toast.show();
+            return;
+        }
+
         Intent intent = new Intent(this, EnterClient.class);
         startActivity(intent); //go to enter client
     }

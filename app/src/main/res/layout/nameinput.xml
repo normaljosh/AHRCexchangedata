@@ -10,15 +10,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Enter Name"
+        android:text="Enter name of person entering data"
         android:id="@+id/textView" />
 
     <EditText
         android:id="@+id/edittext"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter text here.."
-        android:inputType="text"
+        android:hint="Enter name here.."
+        android:inputType="textPersonName"
         android:maxLines="1"
         android:padding="10dp" />
 </LinearLayout>

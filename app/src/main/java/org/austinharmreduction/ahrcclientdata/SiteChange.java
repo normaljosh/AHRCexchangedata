@@ -75,7 +75,7 @@ public class SiteChange extends AppCompatActivity {
 
         // get prompts.xml view
         LayoutInflater layoutInflater = LayoutInflater.from(SiteChange.this);
-        View promptView = layoutInflater.inflate(R.layout.staffinput, null);
+        View promptView = layoutInflater.inflate(R.layout.nameinput, null);
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(SiteChange.this);
         alertDialogBuilder.setView(promptView);
 

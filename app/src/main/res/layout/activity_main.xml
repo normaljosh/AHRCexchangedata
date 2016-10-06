@@ -18,8 +18,7 @@
         android:onClick="Enter"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="50dp" />
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -27,9 +26,9 @@
         android:text="See Database"
         android:id="@+id/seedatabase"
         android:onClick="seedatabase"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@+id/csvwrite"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -37,10 +36,9 @@
         android:text="Write to csv"
         android:id="@+id/csvwrite"
         android:onClick="csvwrite"
-        android:layout_above="@+id/seedatabase"
+        android:layout_below="@+id/SiteChange"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="109dp" />
+        android:layout_alignParentStart="true" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -49,7 +47,8 @@
         android:text="Change site/volunteers"
         android:id="@+id/SiteChange"
         android:onClick="SiteChange"
-        android:layout_above="@+id/csvwrite"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/enter"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
