@@ -34,6 +34,7 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String KEY_NEEDLES_OUT = "Units_Out";
     private static final String KEY_TYPE = "Type";
     private static final String KEY_INS = "Insurance";
+    private static final String KEY_COMMENT = "Comment";
     public DBHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -51,7 +52,8 @@ public class DBHandler extends SQLiteOpenHelper {
                 + KEY_NEEDLES_IN + " INTEGER,"
                 + KEY_NEEDLES_OUT + " INTEGER,"
                 + KEY_TYPE + " TEXT,"
-                + KEY_INS + " TEXT"
+                + KEY_INS + " TEXT,"
+                + KEY_COMMENT + " TEXT"
                 + ")";
         db.execSQL(CREATE_CONTACTS_TABLE);
     }
@@ -76,6 +78,7 @@ public class DBHandler extends SQLiteOpenHelper {
         values.put(KEY_NEEDLES_OUT, client.getneedles_out()); // client Needles_out
         values.put(KEY_TYPE, client.gettype()); // client Race
         values.put(KEY_INS, client.getins()); // client Race
+        values.put(KEY_COMMENT, client.getcomment()); // client Race
     // Inserting Row
         db.insert(TABLE_CLIENTS, null, values);
         db.close(); // Closing database connection
@@ -118,6 +121,7 @@ public class DBHandler extends SQLiteOpenHelper {
                     client.setneedles_out(cursor.getString(8));
                     client.settype(cursor.getString(9));
                     client.setins(cursor.getString(10));
+                    client.setcomment(cursor.getString(11));
     // Adding contact to list
                     ClientList.add(client);
                 } while (cursor.moveToNext());

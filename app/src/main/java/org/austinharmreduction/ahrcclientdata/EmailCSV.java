@@ -43,7 +43,7 @@ public class EmailCSV extends AppCompatActivity {
             }
             try {
                 //for loop to write row by row to the file. Slashes are escaping character
-                String header = "\"ID\",\"Datetime\",\"Staff\",\"Site\",\"Gender\",\"Race\",\"Age\",\"Units In\",\"Units Out\",\"Type\",\"Insurance\"";
+                String header = "\"ID\",\"Datetime\",\"Staff\",\"Site\",\"Gender\",\"Race\",\"Age\",\"Units In\",\"Units Out\",\"Type\",\"Insurance\",\"Comment\"";
                         out.write(header.getBytes());
                 for (ClientFormat client : clients) {
                     String line = "\n" + "\"" + client.getid() + "\",\""
@@ -56,7 +56,8 @@ public class EmailCSV extends AppCompatActivity {
                             + client.getneedles_in() + "\",\""
                             + client.getneedles_out() + "\",\""
                             + client.gettype() + "\",\""
-                            + client.getins() + "\"";
+                            + client.getins() + "\",\""
+                            + client.getcomment() + "\"";
                     // Writing clients  to log
 
                     out.write(line.getBytes());

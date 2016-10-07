@@ -29,6 +29,7 @@ public class DBEnter extends AppCompatActivity {
             String needles_out = extras.getString("outchosen");
             String type = extras.getString("typechosen");
             String ins = extras.getString("inschosen");
+            String comment = extras.getString("commentchosen");
             boolean mainmenu = extras.getBoolean("mainmenu");
             TextView text = (TextView) findViewById(R.id.textView6);
             String display = "Race: " + race + " Gender:" + gender + "Staff:" + staff + "Site:" + site
@@ -41,7 +42,7 @@ public class DBEnter extends AppCompatActivity {
 
         // Inserting Client/Rows
         Log.d("Insert: ", "Inserting ..");
-        db.addClient(new ClientFormat(staff, site, gender, race, age, needles_in, needles_out, type, ins));
+        db.addClient(new ClientFormat(staff, site, gender, race, age, needles_in, needles_out, type, ins, comment));
         // Reading all clients
         Log.d("Reading: ", "Reading all clients..");
         List<ClientFormat> clients = db.getAllClients();

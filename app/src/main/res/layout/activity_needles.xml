@@ -461,4 +461,23 @@
         android:layout_alignStart="@+id/DBScreen"
         android:onClick="mainmenu" />
 
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter additional comment"
+        android:id="@+id/commententer"
+        android:layout_above="@+id/DBScreen"
+        android:layout_alignLeft="@+id/DBScreen"
+        android:layout_alignStart="@+id/DBScreen"
+        android:onClick="commententer" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/commenttext"
+        android:layout_above="@+id/commententer"
+        android:layout_alignLeft="@+id/commententer"
+        android:layout_alignStart="@+id/commententer" />
+
 </RelativeLayout>

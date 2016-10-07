@@ -17,6 +17,7 @@ public class ClientFormat {
     private String needles_out;
     private String type;
     private String ins;
+    private String comment;
     public ClientFormat()
     {
     }
@@ -37,7 +38,8 @@ public class ClientFormat {
     }*/
     //this is the stuff you enter from the buttons
     public ClientFormat( String staff, String site, String gender, String race,
-                         String age, String needles_in, String needles_out, String type, String ins)
+                         String age, String needles_in, String needles_out, String type,
+                         String ins, String comment)
     {
 
         this.staff=staff;
@@ -49,6 +51,7 @@ public class ClientFormat {
         this.needles_out=needles_out;
         this.type=type;
         this.ins=ins;
+        this.comment=comment;
     }
     //functions to store button presses to a clientformat
     public void setid(int id){this.id = id;}
@@ -70,6 +73,7 @@ public class ClientFormat {
     }
     public void settype(String type){this.type = type;}
     public void setins(String ins){this.ins = ins;}
+    public void setcomment(String comment){this.comment = comment;}
 
 //This lets me create an instance of a clientformat which can be called from any class
     private static final ClientFormat currentclient = new ClientFormat();
@@ -97,4 +101,5 @@ public class ClientFormat {
     }
     public String gettype() {return type;}
     public String getins() {return ins;}
+    public String getcomment(){return comment;}
 }

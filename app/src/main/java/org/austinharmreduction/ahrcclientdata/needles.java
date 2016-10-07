@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -25,6 +26,7 @@ public class needles extends AppCompatActivity {
         String needles_out; //store the text corresponding to the needles out
         String type;//store the text corresponding to the type
         String ins;//store the text corresponding to the ins
+        String comment;//store the comment text
 
 
     public void onInButtonClicked(View view) {
@@ -211,6 +213,7 @@ public class needles extends AppCompatActivity {
                 break;
         }
     }
+
         //take race and gender from EnterClient, pass to DBEnter
     /** Called when the user clicks the Enter Client button */
     public void DBScreen(View view) {
@@ -218,6 +221,7 @@ public class needles extends AppCompatActivity {
         RadioGroup needlesoutgroup = (RadioGroup)findViewById(R.id.OutGroup);
         RadioGroup insgroup = (RadioGroup)findViewById(R.id.insuranceGroup);
         RadioGroup typegroup = (RadioGroup)findViewById(R.id.TypeGroup);
+        TextView commentview = (TextView) findViewById(R.id.commenttext);
         Context context = getApplicationContext();
         int duration = Toast.LENGTH_SHORT;
         if (needlesingroup.getCheckedRadioButtonId() == -1) {
@@ -255,6 +259,7 @@ public class needles extends AppCompatActivity {
         String gender= extras.getString("genderchosen");
         String race = extras.getString("racechosen");
         String age = extras.getString("agechosen");
+        String comment = commentview.getText().toString();
         intent.putExtra("genderchosen", gender); // pass gender to the next Activity
         intent.putExtra("racechosen", race); // pass race to the next Activity
         intent.putExtra("agechosen", age); // pass age to the next Activity
@@ -262,6 +267,7 @@ public class needles extends AppCompatActivity {
         intent.putExtra("outchosen", needles_out);// pass needles out to the next Activity
         intent.putExtra("typechosen", type);// pass needles out to the next Activity
         intent.putExtra("inschosen", ins);// pass needles out to the next Activity
+        intent.putExtra("commentchosen", comment);
         intent.putExtra("mainmenu", mainmenu);
         startActivity(intent); //go to enter client
         finish();
@@ -272,6 +278,7 @@ public class needles extends AppCompatActivity {
         RadioGroup needlesoutgroup = (RadioGroup)findViewById(R.id.OutGroup);
         RadioGroup insgroup = (RadioGroup)findViewById(R.id.insuranceGroup);
         RadioGroup typegroup = (RadioGroup)findViewById(R.id.TypeGroup);
+        TextView commentview = (TextView) findViewById(R.id.commenttext);
         Context context = getApplicationContext();
         int duration = Toast.LENGTH_SHORT;
         if (needlesingroup.getCheckedRadioButtonId() == -1) {
@@ -308,6 +315,8 @@ public class needles extends AppCompatActivity {
         String gender= extras.getString("genderchosen");
         String race = extras.getString("racechosen");
         String age = extras.getString("agechosen");
+        String comment = commentview.getText().toString();
+        Log.d(comment, comment);
         boolean mainmenu = true;
         intent.putExtra("genderchosen", gender); // pass gender to the next Activity
         intent.putExtra("racechosen", race); // pass race to the next Activity
@@ -316,9 +325,39 @@ public class needles extends AppCompatActivity {
         intent.putExtra("outchosen", needles_out);// pass needles out to the next Activity
         intent.putExtra("typechosen", type);// pass needles out to the next Activity
         intent.putExtra("inschosen", ins);// pass needles out to the next Activity
+        intent.putExtra("commentchosen", comment);
         intent.putExtra("mainmenu", mainmenu);
         startActivity(intent); //go to enter client
         finish();
+    }
+
+
+    public void commententer(View view){
+// get prompts.xml view
+        LayoutInflater layoutInflater = LayoutInflater.from(needles.this);
+        View promptView = layoutInflater.inflate(R.layout.commentinput, null);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(needles.this);
+        alertDialogBuilder.setView(promptView);
+
+        final EditText editText = (EditText) promptView.findViewById(R.id.edittext);
+        // setup a dialog window
+        alertDialogBuilder.setCancelable(false)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        TextView commentview = (TextView) findViewById(R.id.commenttext);
+                        commentview.setText(editText.getText());//display comment as text, will store when data sent
+                    }
+                })
+                .setNegativeButton("Cancel",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+        // create an alert dialog
+        AlertDialog alert = alertDialogBuilder.create();
+        alert.show();
     }
 
     protected void ShowInputNumber() {
@@ -378,7 +417,10 @@ public class needles extends AppCompatActivity {
         AlertDialog alert = alertDialogBuilder.create();
         alert.show();
     }
+
+
     }
+
 
 
 
