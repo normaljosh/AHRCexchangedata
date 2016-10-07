@@ -42,21 +42,21 @@ public class EmailCSV extends AppCompatActivity {
                 e.printStackTrace();
             }
             try {
-                //for loop to write row by row to the file
-                String header = "ID,Datetime,Staff,Site,Gender,Race,Age,Units In,Units Out,Type,Insurance";
+                //for loop to write row by row to the file. Slashes are escaping character
+                String header = "\"ID\",\"Datetime\",\"Staff\",\"Site\",\"Gender\",\"Race\",\"Age\",\"Units In\",\"Units Out\",\"Type\",\"Insurance\"";
                         out.write(header.getBytes());
                 for (ClientFormat client : clients) {
-                    String line = "\n" + client.getid() + ","
-                            + client.getdate() + ","
-                            + client.getstaff() + ","
-                            + client.getsite() + ","
-                            + client.getgender() + ","
-                            + client.getrace() + ","
-                            + client.getage() + ","
-                            + client.getneedles_in() + ","
-                            + client.getneedles_out() + ","
-                            + client.gettype() + ","
-                            + client.getins() ;
+                    String line = "\n" + "\"" + client.getid() + "\",\""
+                            + client.getdate() + "\",\""
+                            + client.getstaff() + "\",\""
+                            + client.getsite() + "\",\""
+                            + client.getgender() + "\",\""
+                            + client.getrace() + "\",\""
+                            + client.getage() + "\",\""
+                            + client.getneedles_in() + "\",\""
+                            + client.getneedles_out() + "\",\""
+                            + client.gettype() + "\",\""
+                            + client.getins() + "\"";
                     // Writing clients  to log
 
                     out.write(line.getBytes());

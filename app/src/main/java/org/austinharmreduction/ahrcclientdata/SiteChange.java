@@ -17,6 +17,8 @@ public class SiteChange extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_site_change);
+        TextView staffview = (TextView) findViewById(R.id.textView8);
+        staffview.setText(SiteHolder.getInstance().getstaffhold());
     }
     String siteclick;
     public void onSiteButtonClicked(View view) {
