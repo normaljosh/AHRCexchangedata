@@ -1,6 +1,7 @@
 package org.austinharmreduction.ahrcclientdata;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,8 +12,10 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-public class SiteChange extends AppCompatActivity {
+import java.util.Calendar;
 
+public class SiteChange extends AppCompatActivity {
+//This screen lets us set or change the site and staff member
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,8 +71,10 @@ public class SiteChange extends AppCompatActivity {
         TextView staffview = (TextView) findViewById(R.id.textView8);
         SiteHolder.getInstance().setstaffhold(staffview.getText().toString());
        SiteHolder.getInstance().setsitehold(siteclick);
+        SiteHolder.getInstance().setdatehold(Calendar.getInstance());
 
-    finish();
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent); //go to enter client
     }
 
     //enter staff
