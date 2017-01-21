@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AHRC client data</string>
+    <string name="app_name">AHRC Participant Data</string>
     <string name="male">Male </string>
     <string name="female">Female </string>
     <string name="otherrace">Enter Other </string>
@@ -51,6 +51,64 @@
     <string name="age10">60-65</string>
     <string name="age11">65-70</string>
     <string name="age12">75+</string>
+
+    <string-array name="genderarray">
+    <item>"---"</item>
+    <item>@string/gen1</item>
+    <item>@string/gen2</item>
+    <item>@string/gen3</item>
+    <item>@string/gen4</item>
+</string-array>
+
+    <string-array name="racearray">
+        <item>"---"</item>
+        <item>@string/race1</item>
+        <item>@string/race2</item>
+        <item>@string/race3</item>
+        <item>@string/race4</item>
+        <item>@string/race5</item>
+        <item>@string/race6</item>
+    </string-array>
+
+    <string-array name="agearray">
+        <item>"---"</item>
+        <item>@string/age1</item>
+        <item>@string/age2</item>
+        <item>@string/age3</item>
+        <item>@string/age4</item>
+        <item>@string/age5</item>
+        <item>@string/age6</item>
+        <item>@string/age7</item>
+        <item>@string/age8</item>
+        <item>@string/age9</item>
+        <item>@string/age10</item>
+        <item>@string/age11</item>
+        <item>@string/age12</item>
+    </string-array>
+    <string-array name="insarray">
+        <item>"---"</item>
+        <item>@string/ins1</item>
+        <item>@string/ins2</item>
+        <item>@string/ins3</item>
+        <item>@string/ins4</item>
+        <item>@string/ins5</item>
+        <item>@string/ins6</item>
+    </string-array>
+
+    <string-array name="numarray">
+        <item>"0"</item>
+        <item>"1"</item>
+        <item>"2"</item>
+        <item>"3"</item>
+        <item>"4"</item>
+        <item>"5"</item>
+        <item>"6"</item>
+        <item>"7"</item>
+        <item>"8"</item>
+        <item>"9"</item>
+        <item>"10"</item>
+    </string-array>
+    
     <string name="type1">Individual</string>
     <string name="type2">Primary</string>
     <string name="type3">Secondary</string>
@@ -58,6 +116,7 @@
     <string name="ins2">Private</string>
     <string name="ins3">Medicare</string>
     <string name="ins4">Map</string>
+    <string name="ins6">VA</string>
     <string name="ins5">No Insurance</string>
     <string name="other">Other</string>
     <string name="reset">reset</string>

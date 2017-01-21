@@ -229,10 +229,11 @@
         android:text="Save &amp; Enter new participant"
         android:id="@+id/DBScreen"
         android:onClick="DBScreen"
-        android:layout_above="@+id/mainmenu"
-        android:layout_alignRight="@+id/insuranceGroup"
-        android:layout_alignEnd="@+id/insuranceGroup"
-        android:backgroundTint="#cc0000" />
+        android:backgroundTint="#cc0000"
+        android:textSize="25dp"
+        android:layout_above="@+id/clearbuttons"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -329,18 +330,19 @@
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/DBScreen"
         android:layout_alignEnd="@+id/DBScreen"
-        android:backgroundTint="#cc0000" />
+        android:backgroundTint="#cc0000"
+        android:textSize="20dp" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter additional comment"
+        android:text="comment"
         android:id="@+id/commententer"
         android:onClick="commententer"
-        android:layout_above="@+id/clearbuttons"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignTop="@+id/mainmenu"
+        android:layout_alignRight="@+id/gender"
+        android:layout_alignEnd="@+id/gender" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -358,9 +360,9 @@
         android:text="Clear all buttons"
         android:onClick="clearbuttons"
         android:textSize="15dp"
-        android:layout_above="@+id/Secondaries"
-        android:layout_alignRight="@+id/Secondaries"
-        android:layout_alignEnd="@+id/Secondaries"
+        android:layout_above="@+id/mainmenu"
+        android:layout_alignRight="@+id/mainmenu"
+        android:layout_alignEnd="@+id/mainmenu"
         android:backgroundTint="#ffffff" />
 
     <Button
@@ -369,10 +371,11 @@
         android:layout_height="wrap_content"
         android:text="Enter Participant with Secondaries"
         android:id="@+id/Secondaries"
-        android:layout_above="@+id/DBScreen"
-        android:layout_alignRight="@+id/mainmenu"
-        android:layout_alignEnd="@+id/mainmenu"
         android:onClick="entersecondaries"
-        android:backgroundTint="#cc0000" />
+        android:backgroundTint="#cc0000"
+        android:textSize="25dp"
+        android:layout_above="@+id/DBScreen"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

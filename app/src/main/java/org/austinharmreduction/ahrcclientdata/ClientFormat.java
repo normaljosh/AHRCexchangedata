@@ -4,7 +4,7 @@ package org.austinharmreduction.ahrcclientdata;
  * Created by Josh Leibowitz on 9/5/2016.
  */
 
-//structure of how client data for one client is stored
+//structure of how client data for one client is stored, This is required for how the SQL works
 public class ClientFormat {
     private int id;
     private String date;

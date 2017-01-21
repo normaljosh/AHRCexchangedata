@@ -12,13 +12,14 @@ import android.widget.TextView;
 import java.util.List;
 
 public class DBEnter extends AppCompatActivity {
-    //stuff from mysql example
+    //This class creates the database if it doesn't exist, and writes all the data we've collected to a database.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dbenter);
         Bundle extras = getIntent().getExtras();
+        //getting all the values entered previously
         if (extras != null) {
             String staff = SiteHolder.getInstance().getstaffhold();
             String site = SiteHolder.getInstance().getsitehold();
@@ -30,6 +31,7 @@ public class DBEnter extends AppCompatActivity {
             String type = extras.getString("typechosen");
             String ins = extras.getString("inschosen");
             String comment = extras.getString("commentchosen");
+            //this bool chooses whether we go to the main menu, or back to the "enter client screen"
             boolean mainmenu = extras.getBoolean("mainmenu");
             TextView text = (TextView) findViewById(R.id.textView6);
             String display = "Race: " + race + " Gender:" + gender + "Staff:" + staff + "Site:" + site
@@ -41,29 +43,14 @@ public class DBEnter extends AppCompatActivity {
         DBHandler db = new DBHandler(this);
 
         // Inserting Client/Rows
-        Log.d("Insert: ", "Inserting ..");
         db.addClient(new ClientFormat(staff, site, gender, race, age, needles_in, needles_out, type, ins, comment));
-        // Reading all clients
-        Log.d("Reading: ", "Reading all clients..");
-        List<ClientFormat> clients = db.getAllClients();
 
-        for (ClientFormat client : clients) {
-            String log = "Id: " + client.getid() + " ,Race: " + client.getrace() + " ,Gender: "
-                    + client.getgender() + ",Needles In: " + client.getneedles_in() + " ,Needles Out: "
-                    + client.getneedles_out();
-            // Writing clients  to log
-            Log.d("Client: : ", log);
+
             Intent path1 = new Intent(this, EnterClient.class);
             Intent path2 = new Intent(this, MainActivity.class);
             if (mainmenu)
             startActivity(path2);
             else startActivity(path1);
-        }
-
-
-
-
-
     }
     }
 

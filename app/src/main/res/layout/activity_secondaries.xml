@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="org.austinharmreduction.ahrcclientdata.Secondaries"
+    android:backgroundTint="#86d0fe">
+
+
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Secondaries and Enter New Client"
+        android:id="@+id/newclient"
+        android:onClick="newclient"
+
+        android:layout_above="@+id/backtomain"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="10dp"
+        android:layout_alignRight="@+id/backtomain"
+        android:layout_alignEnd="@+id/backtomain"
+        android:backgroundTint="#cc0000" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/displayspinner"
+        android:layout_below="@+id/gendersp1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="108dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Gender      "
+        android:id="@+id/GenderText"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/NumText"
+        android:layout_toEndOf="@+id/NumText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Race     "
+        android:id="@+id/RaceText"
+        android:layout_alignTop="@+id/GenderText"
+        android:layout_toRightOf="@+id/GenderText"
+        android:layout_toEndOf="@+id/GenderText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Age     "
+        android:id="@+id/AgeText"
+        android:layout_alignTop="@+id/RaceText"
+        android:layout_toRightOf="@+id/RaceText"
+        android:layout_toEndOf="@+id/RaceText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Ins."
+        android:id="@+id/InsText"
+        android:layout_alignTop="@+id/AgeText"
+        android:layout_toRightOf="@+id/AgeText"
+        android:layout_toEndOf="@+id/AgeText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Num."
+        android:id="@+id/NumText"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/numsp1"
+        android:layout_above="@+id/displayspinner"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:spinnerMode="dropdown"
+        android:layout_alignRight="@+id/NumText"
+        android:layout_alignEnd="@+id/NumText"
+        android:layout_below="@+id/NumText" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/numsp2"
+        android:layout_below="@+id/numsp1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/numsp1"
+        android:layout_alignEnd="@+id/numsp1"
+        android:layout_marginTop="15dp"
+        android:spinnerMode="dropdown" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/numsp3"
+        android:layout_below="@+id/numsp2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/numsp2"
+        android:layout_alignEnd="@+id/numsp2"
+        android:layout_marginTop="15dp"
+        android:spinnerMode="dropdown" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/numsp4"
+        android:layout_below="@+id/numsp3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/numsp3"
+        android:layout_alignEnd="@+id/numsp3"
+        android:layout_marginTop="15dp"
+        android:spinnerMode="dropdown" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/numsp5"
+        android:layout_below="@+id/numsp4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/numsp4"
+        android:layout_alignEnd="@+id/numsp4"
+        android:layout_marginTop="15dp"
+        android:spinnerMode="dropdown" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/numsp6"
+        android:layout_below="@+id/numsp5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/numsp5"
+        android:layout_alignEnd="@+id/numsp5"
+        android:layout_marginTop="15dp"
+        android:spinnerMode="dropdown" />
+
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gendersp1"
+        android:entries="@array/genderarray"
+        android:spinnerMode="dropdown"
+        android:layout_below="@+id/GenderText"
+        android:layout_alignLeft="@+id/GenderText"
+        android:layout_alignStart="@+id/GenderText" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gendersp2"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/numsp2"
+        android:layout_alignLeft="@+id/gendersp1"
+        android:layout_alignStart="@+id/gendersp1"
+        android:layout_alignRight="@+id/gendersp1"
+        android:layout_alignEnd="@+id/gendersp1" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gendersp3"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/numsp3"
+        android:layout_alignLeft="@+id/gendersp2"
+        android:layout_alignStart="@+id/gendersp2"
+        android:layout_alignRight="@+id/gendersp2"
+        android:layout_alignEnd="@+id/gendersp2" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gendersp4"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/numsp4"
+        android:layout_alignLeft="@+id/gendersp3"
+        android:layout_alignStart="@+id/gendersp3"
+        android:layout_alignRight="@+id/gendersp3"
+        android:layout_alignEnd="@+id/gendersp3" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gendersp5"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/numsp5"
+        android:layout_alignLeft="@+id/gendersp4"
+        android:layout_alignStart="@+id/gendersp4"
+        android:layout_alignRight="@+id/gendersp4"
+        android:layout_alignEnd="@+id/gendersp4" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gendersp6"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/numsp6"
+        android:layout_alignLeft="@+id/gendersp5"
+        android:layout_alignStart="@+id/gendersp5"
+        android:layout_alignRight="@+id/gendersp5"
+        android:layout_alignEnd="@+id/gendersp5" />
+    
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/racesp1"
+        android:layout_below="@+id/RaceText"
+        android:layout_alignLeft="@+id/RaceText"
+        android:layout_alignStart="@+id/RaceText"
+        android:spinnerMode="dropdown" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/racesp2"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/gendersp2"
+        android:layout_alignLeft="@+id/racesp1"
+        android:layout_alignStart="@+id/racesp1"
+        android:layout_alignRight="@+id/racesp1"
+        android:layout_alignEnd="@+id/racesp1" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/racesp3"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/gendersp3"
+        android:layout_alignLeft="@+id/racesp2"
+        android:layout_alignStart="@+id/racesp2"
+        android:layout_alignRight="@+id/racesp2"
+        android:layout_alignEnd="@+id/racesp2" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/racesp4"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/gendersp4"
+        android:layout_alignLeft="@+id/racesp3"
+        android:layout_alignStart="@+id/racesp3"
+        android:layout_alignRight="@+id/racesp3"
+        android:layout_alignEnd="@+id/racesp3" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/racesp5"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/gendersp5"
+        android:layout_alignLeft="@+id/racesp4"
+        android:layout_alignStart="@+id/racesp4"
+        android:layout_alignRight="@+id/racesp4"
+        android:layout_alignEnd="@+id/racesp4" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/racesp6"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/gendersp6"
+        android:layout_alignLeft="@+id/racesp5"
+        android:layout_alignStart="@+id/racesp5"
+        android:layout_alignRight="@+id/racesp5"
+        android:layout_alignEnd="@+id/racesp5" />
+
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/agesp1"
+        android:layout_below="@+id/AgeText"
+        android:layout_toRightOf="@+id/RaceText"
+        android:layout_toEndOf="@+id/RaceText"
+        android:spinnerMode="dropdown" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/agesp2"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/racesp2"
+        android:layout_alignLeft="@+id/agesp1"
+        android:layout_alignStart="@+id/agesp1"
+        android:layout_alignRight="@+id/agesp1"
+        android:layout_alignEnd="@+id/agesp1" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/agesp3"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/racesp3"
+        android:layout_alignLeft="@+id/agesp2"
+        android:layout_alignStart="@+id/agesp2"
+        android:layout_alignRight="@+id/agesp2"
+        android:layout_alignEnd="@+id/agesp2" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/agesp4"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/racesp4"
+        android:layout_alignLeft="@+id/agesp3"
+        android:layout_alignStart="@+id/agesp3"
+        android:layout_alignRight="@+id/agesp3"
+        android:layout_alignEnd="@+id/agesp3" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/agesp5"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/racesp5"
+        android:layout_alignLeft="@+id/agesp4"
+        android:layout_alignStart="@+id/agesp4"
+        android:layout_alignRight="@+id/agesp4"
+        android:layout_alignEnd="@+id/agesp4" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/agesp6"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/racesp6"
+        android:layout_alignLeft="@+id/agesp5"
+        android:layout_alignStart="@+id/agesp5"
+        android:layout_alignRight="@+id/agesp5"
+        android:layout_alignEnd="@+id/agesp5" />
+    
+   
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/inssp1"
+        android:layout_above="@+id/displayspinner"
+        android:layout_alignLeft="@+id/InsText"
+        android:layout_alignStart="@+id/InsText"
+        android:spinnerMode="dropdown" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/inssp2"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/agesp2"
+        android:layout_alignLeft="@+id/inssp1"
+        android:layout_alignStart="@+id/inssp1"
+        android:layout_alignRight="@+id/inssp1"
+        android:layout_alignEnd="@+id/inssp1" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/inssp3"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/agesp3"
+        android:layout_alignLeft="@+id/inssp2"
+        android:layout_alignStart="@+id/inssp2"
+        android:layout_alignRight="@+id/inssp2"
+        android:layout_alignEnd="@+id/inssp2" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/inssp4"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/agesp4"
+        android:layout_alignLeft="@+id/inssp3"
+        android:layout_alignStart="@+id/inssp3"
+        android:layout_alignRight="@+id/inssp3"
+        android:layout_alignEnd="@+id/inssp3" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/inssp5"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/agesp5"
+        android:layout_alignLeft="@+id/inssp4"
+        android:layout_alignStart="@+id/inssp4"
+        android:layout_alignRight="@+id/inssp4"
+        android:layout_alignEnd="@+id/inssp4" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/inssp6"
+        android:spinnerMode="dropdown"
+        android:layout_alignTop="@+id/agesp6"
+        android:layout_alignLeft="@+id/inssp5"
+        android:layout_alignStart="@+id/inssp5"
+        android:layout_alignRight="@+id/inssp5"
+        android:layout_alignEnd="@+id/inssp5" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save Secondaries and Back to Main Menu"
+        android:id="@+id/backtomain"
+        android:onClick="backtomain"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:backgroundTint="#cc0000" />
+
+
+</RelativeLayout>

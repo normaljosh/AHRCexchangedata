@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class EmailCSV extends AppCompatActivity {
-
+//this converts the SQLite database into a csv file that can be output.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,7 +80,7 @@ public class EmailCSV extends AppCompatActivity {
         Intent sendIntent = new Intent(Intent.ACTION_SEND);
         sendIntent.putExtra(Intent.EXTRA_SUBJECT, "Participant List");
         sendIntent.putExtra(Intent.EXTRA_STREAM, u1);
-        sendIntent.putExtra(Intent.EXTRA_EMAIL  , new String[]{"normaljosh@gmail.com"});
+        sendIntent.putExtra(Intent.EXTRA_EMAIL  , new String[]{"ahrcdata@gmail.com"});
         sendIntent.setType("text/html");
         startActivity(sendIntent);
     }

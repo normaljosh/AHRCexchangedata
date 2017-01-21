@@ -24,7 +24,8 @@
         <activity
             android:name=".AndroidDatabaseManager"
             android:theme="@style/Theme.AppCompat.Light" />
-        <activity android:name=".SiteChange"></activity>
+        <activity android:name=".SiteChange" />
+        <activity android:name=".Secondaries"></activity>
     </application>
 
 </manifest>

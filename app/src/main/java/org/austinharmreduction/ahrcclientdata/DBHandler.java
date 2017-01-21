@@ -12,8 +12,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.util.Calendar;
 import java.util.ArrayList;
 import java.util.List;
+//This was pretty much all directly lifted from an online example, but it establishes the framework
+//for the database that the info is stored in.
 public class DBHandler extends SQLiteOpenHelper {
 
     // Database Version
@@ -82,6 +85,7 @@ public class DBHandler extends SQLiteOpenHelper {
     // Inserting Row
         db.insert(TABLE_CLIENTS, null, values);
         db.close(); // Closing database connection
+        SiteHolder.getInstance().setdatehold(Calendar.getInstance());
     }
 
  /*   // Getting one client... doesn't work right now and will need to be edited

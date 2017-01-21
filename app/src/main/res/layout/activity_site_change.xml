@@ -122,7 +122,8 @@
         android:onClick="EnterSite"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:backgroundTint="#86d0fe" />
 
     <TextView
         android:layout_width="wrap_content"

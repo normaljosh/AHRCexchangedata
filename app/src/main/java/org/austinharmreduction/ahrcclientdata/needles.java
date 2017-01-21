@@ -14,7 +14,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-
+//This functions pretty similarly to the "EnterClient" screen, it's just the second screen of data.
 public class needles extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,137 +22,101 @@ public class needles extends AppCompatActivity {
         setContentView(R.layout.activity_needles);
     }
 
-        String needles_in; // store the text corresponding to  the needles in
-        String needles_out; //store the text corresponding to the needles out
-        String type;//store the text corresponding to the type
-        String ins;//store the text corresponding to the ins
+        String gender; //store the text corresponding to the needles out
+        String type;
+    String ins;//store the text corresponding to the ins
+    String age;//store the text corresponding to the ins
         String comment;//store the comment text
 
 
-    public void onInButtonClicked(View view) {
+    public void OnGenderButtonClicked(View view) {
         // Is the gender button now checked?
         boolean checked = ((RadioButton) view).isChecked();
 
         // Check which radio button was clicked
         switch (view.getId()) {
-            case R.id.in1:
+            case R.id.gen1:
                 if (checked)
-                    needles_in = getResources().getString(R.string.in1);
+                    gender = getResources().getString(R.string.gen1);
                 break;
-            case R.id.in2:
+            case R.id.gen2:
                 if (checked)
-                    needles_in = getResources().getString(R.string.in2);
+                    gender = getResources().getString(R.string.gen2);
                 break;
-            case R.id.in3:
+            case R.id.gen3:
                 if (checked)
-                    needles_in = getResources().getString(R.string.in3);
+                    gender = getResources().getString(R.string.gen3);
                 break;
-            case R.id.in4:
+            case R.id.gen4:
                 if (checked)
-                    needles_in = getResources().getString(R.string.in4);
+                    gender = getResources().getString(R.string.gen4);
                 break;
-            case R.id.in5:
+            case R.id.OtherGender:
+                RadioButton fish = (RadioButton) findViewById(R.id.OtherGender);
                 if (checked)
-                    needles_in = getResources().getString(R.string.in5);
+                    buttonstore.getInstance().setbuttonhold(fish);//set this as the radiobutton to be changed by the showinput function
+                ShowInput();//see below function, this lets us rename the text of the button
+                gender = getResources().getString(R.string.reset);//setting the value to "reset" lets us change the value to the text  of the button
                 break;
-            case R.id.in6:
-                if (checked)
-                    needles_in = getResources().getString(R.string.in6);
-                break;
-            case R.id.in7:
-                if (checked)
-                    needles_in = getResources().getString(R.string.in7);
-                break;
-            case R.id.in8:
-                if (checked)
-                    needles_in = getResources().getString(R.string.in8);
-                break;
-            case R.id.in9:
-                if (checked)
-                    needles_in = getResources().getString(R.string.in9);
-                break;
-            case R.id.in10:
-                if (checked)
-                    needles_in = getResources().getString(R.string.in10);
-                break;
-            case R.id.in11:
-                if (checked)
-                    needles_in = getResources().getString(R.string.in11);
-                break;
-            case R.id.otherin:
-                RadioButton fish = (RadioButton) findViewById(R.id.otherin);
-                if (checked)
-                    //set this as the radiobutton to be changed by the showinput function
-                    buttonstore.getInstance().setbuttonhold(fish);
-                ShowInputNumber();
-                needles_in = getResources().getString(R.string.reset);; //this lets us pass the new gender when nextscreen is clicked
-                break;
-
-
         }
 
 
     }
 
-    public void onOutButtonClicked(View view) {
-        // Is the gender button now checked?
+    public void onAgeButtonClicked(View view) {
+        // Is the race button now checked?
         boolean checked = ((RadioButton) view).isChecked();
 
         // Check which radio button was clicked
         switch (view.getId()) {
-            case R.id.out1:
+            case R.id.age1:
                 if (checked)
-                    needles_out = getResources().getString(R.string.out1);
+                    age = getResources().getString(R.string.age1);
                 break;
-            case R.id.out2:
+            case R.id.age2:
                 if (checked)
-                    needles_out = getResources().getString(R.string.out2);
+                    age = getResources().getString(R.string.age2);
                 break;
-            case R.id.out3:
+            case R.id.age3:
                 if (checked)
-                    needles_out = getResources().getString(R.string.out3);
+                    age = getResources().getString(R.string.age3);
                 break;
-            case R.id.out4:
+            case R.id.age4:
                 if (checked)
-                    needles_out = getResources().getString(R.string.out4);
+                    age = getResources().getString(R.string.age4);
                 break;
-            case R.id.out5:
+            case R.id.age5:
                 if (checked)
-                    needles_out = getResources().getString(R.string.out5);
+                    age = getResources().getString(R.string.age5);
                 break;
-            case R.id.out6:
+            case R.id.age6:
                 if (checked)
-                    needles_out = getResources().getString(R.string.out6);
+                    age = getResources().getString(R.string.age6);
                 break;
-            case R.id.out7:
+            case R.id.age7:
                 if (checked)
-                    needles_out = getResources().getString(R.string.out7);
+                    age = getResources().getString(R.string.age7);
                 break;
-            case R.id.out8:
+            case R.id.age8:
                 if (checked)
-                    needles_out = getResources().getString(R.string.out8);
+                    age = getResources().getString(R.string.age8);
                 break;
-            case R.id.out9:
+            case R.id.age9:
                 if (checked)
-                    needles_out = getResources().getString(R.string.out9);
+                    age = getResources().getString(R.string.age9);
                 break;
-            case R.id.out10:
+            case R.id.age10:
                 if (checked)
-                    needles_out = getResources().getString(R.string.out10);
+                    age = getResources().getString(R.string.age10);
                 break;
-            case R.id.out11:
+            case R.id.age11:
                 if (checked)
-                    needles_out = getResources().getString(R.string.out11);
+                    age = getResources().getString(R.string.age11);
                 break;
-            case R.id.otherout:
-                RadioButton fish = (RadioButton) findViewById(R.id.otherout);
+            case R.id.age12:
                 if (checked)
-                    //set this as the radiobutton to be changed by the showinput function
-                    buttonstore.getInstance().setbuttonhold(fish);
-                ShowInputNumber();
-                needles_out = getResources().getString(R.string.reset);; //this lets us pass the new gender when nextscreen is clicked
+                    age = getResources().getString(R.string.age11);
                 break;
-
 
         }
     }
@@ -182,6 +146,11 @@ public class needles extends AppCompatActivity {
             case R.id.ins5:
                 if (checked)
                     ins = getResources().getString(R.string.ins5);
+                break;
+            case R.id.ins6:
+                if (checked)
+                    ins = getResources().getString(R.string.ins6);
+                break;
             case R.id.otherins:
                 RadioButton fish = (RadioButton) findViewById(R.id.otherins);
                 if (checked)
@@ -193,44 +162,63 @@ public class needles extends AppCompatActivity {
         }
     }
 
-    public void onTypeButtonClicked(View view) {
-        // Is the gender button now checked?
-        boolean checked = ((RadioButton) view).isChecked();
-
-        // Check which radio button was clicked
-        switch (view.getId()) {
-            case R.id.type1:
-                if (checked)
-                    type = getResources().getString(R.string.type1);
-                break;
-            case R.id.type2:
-                if (checked)
-                    type = getResources().getString(R.string.type2);
-                break;
-            case R.id.type3:
-                if (checked)
-                    type = getResources().getString(R.string.type3);
-                break;
+    public void entersecondaries(View view) {
+        RadioGroup gendergroup = (RadioGroup)findViewById(R.id.genderGroup);
+        RadioGroup insgroup = (RadioGroup)findViewById(R.id.insuranceGroup);
+        RadioGroup agegroup = (RadioGroup)findViewById(R.id.AgeGroup);
+        TextView commentview = (TextView) findViewById(R.id.commenttext);
+        Context context = getApplicationContext();
+        int duration = Toast.LENGTH_SHORT;
+        if (gendergroup.getCheckedRadioButtonId() == -1) {
+            Toast toast = Toast.makeText(context, "please enter gender", duration);
+            toast.show();
+            return;
         }
+        if (insgroup.getCheckedRadioButtonId() == -1) {
+            Toast toast = Toast.makeText(context, "please enter insurance", duration);
+            toast.show();
+            return;
+        }
+        if (agegroup.getCheckedRadioButtonId() == -1) {
+            Toast toast = Toast.makeText(context, "please enter age of exchanger", duration);
+            toast.show();
+            return;
+        }
+        Intent intent = new Intent(this, Secondaries.class);
+        RadioButton button = (RadioButton) findViewById(R.id.OtherGender);
+        RadioButton buttonins = (RadioButton) findViewById(R.id.otherins);
+        if  (gender == getResources().getString(R.string.reset))
+            gender = button.getText().toString();
+        if  (ins == getResources().getString(R.string.reset))
+            ins = buttonins.getText().toString();
+        Bundle extras = getIntent().getExtras();
+        String needles_in= extras.getString("inchosen");
+        String race = extras.getString("racechosen");
+        String needles_out = extras.getString("outchosen");
+        String comment = commentview.getText().toString();
+        intent.putExtra("genderchosen", gender); // pass gender to the next Activity
+        intent.putExtra("racechosen", race); // pass race to the next Activity
+        intent.putExtra("agechosen", age); // pass age to the next Activity
+        intent.putExtra("inchosen", needles_in);// pass needles in to the next Activity
+        intent.putExtra("outchosen", needles_out);// pass needles out to the next Activity
+        intent.putExtra("inschosen", ins);// pass needles out to the next Activity
+        intent.putExtra("commentchosen", comment);
+        startActivity(intent); //go to enter client
+        finish();
     }
 
         //take race and gender from EnterClient, pass to DBEnter
     /** Called when the user clicks the Enter Client button */
     public void DBScreen(View view) {
-        RadioGroup needlesingroup = (RadioGroup)findViewById(R.id.InGroup);
-        RadioGroup needlesoutgroup = (RadioGroup)findViewById(R.id.OutGroup);
+        type = getResources().getString(R.string.type1);
+        RadioGroup gendergroup = (RadioGroup)findViewById(R.id.genderGroup);
         RadioGroup insgroup = (RadioGroup)findViewById(R.id.insuranceGroup);
-        RadioGroup typegroup = (RadioGroup)findViewById(R.id.TypeGroup);
+        RadioGroup agegroup = (RadioGroup)findViewById(R.id.AgeGroup);
         TextView commentview = (TextView) findViewById(R.id.commenttext);
         Context context = getApplicationContext();
         int duration = Toast.LENGTH_SHORT;
-        if (needlesingroup.getCheckedRadioButtonId() == -1) {
-            Toast toast = Toast.makeText(context, "please enter needles in", duration);
-            toast.show();
-            return;
-        }
-        if (needlesoutgroup.getCheckedRadioButtonId() == -1) {
-            Toast toast = Toast.makeText(context, "please enter needles out", duration);
+        if (gendergroup.getCheckedRadioButtonId() == -1) {
+            Toast toast = Toast.makeText(context, "please enter gender", duration);
             toast.show();
             return;
         }
@@ -239,26 +227,24 @@ public class needles extends AppCompatActivity {
             toast.show();
             return;
         }
-        if (typegroup.getCheckedRadioButtonId() == -1) {
-            Toast toast = Toast.makeText(context, "please enter type of exchanger", duration);
+        if (agegroup.getCheckedRadioButtonId() == -1) {
+            Toast toast = Toast.makeText(context, "please enter age of exchanger", duration);
             toast.show();
             return;
         }
         Intent intent = new Intent(this, DBEnter.class);
-        RadioButton button = (RadioButton) findViewById(R.id.otherin);
-        RadioButton buttonout = (RadioButton) findViewById(R.id.otherout);
+        RadioButton button = (RadioButton) findViewById(R.id.OtherGender);
         RadioButton buttonins = (RadioButton) findViewById(R.id.otherins);
-        if  (needles_in == getResources().getString(R.string.reset))
-            needles_in = button.getText().toString();
-        if  (needles_out == getResources().getString(R.string.reset))
-            needles_out = buttonout.getText().toString();
+
+        if  (gender == getResources().getString(R.string.reset))
+            gender = button.getText().toString();
         if  (ins == getResources().getString(R.string.reset))
             ins = buttonins.getText().toString();
         Bundle extras = getIntent().getExtras();
         boolean mainmenu = false; // for path in next entry
-        String gender= extras.getString("genderchosen");
+        String needles_in= extras.getString("inchosen");
         String race = extras.getString("racechosen");
-        String age = extras.getString("agechosen");
+        String needles_out = extras.getString("outchosen");
         String comment = commentview.getText().toString();
         intent.putExtra("genderchosen", gender); // pass gender to the next Activity
         intent.putExtra("racechosen", race); // pass race to the next Activity
@@ -272,22 +258,18 @@ public class needles extends AppCompatActivity {
         startActivity(intent); //go to enter client
         finish();
     }
-
+    //this is identical to the last one, but the mainmenu bool is set to True, which will make us
+    //go to the main menu after the DBEnter class.
     public void mainmenu(View view) {
-        RadioGroup needlesingroup = (RadioGroup)findViewById(R.id.InGroup);
-        RadioGroup needlesoutgroup = (RadioGroup)findViewById(R.id.OutGroup);
+        type = getResources().getString(R.string.type1);
+        RadioGroup gendergroup = (RadioGroup)findViewById(R.id.genderGroup);
         RadioGroup insgroup = (RadioGroup)findViewById(R.id.insuranceGroup);
-        RadioGroup typegroup = (RadioGroup)findViewById(R.id.TypeGroup);
+        RadioGroup agegroup = (RadioGroup)findViewById(R.id.AgeGroup);
         TextView commentview = (TextView) findViewById(R.id.commenttext);
         Context context = getApplicationContext();
         int duration = Toast.LENGTH_SHORT;
-        if (needlesingroup.getCheckedRadioButtonId() == -1) {
-            Toast toast = Toast.makeText(context, "please enter needles in", duration);
-            toast.show();
-            return;
-        }
-        if (needlesoutgroup.getCheckedRadioButtonId() == -1) {
-            Toast toast = Toast.makeText(context, "please enter needles out", duration);
+        if (gendergroup.getCheckedRadioButtonId() == -1) {
+            Toast toast = Toast.makeText(context, "please enter gender", duration);
             toast.show();
             return;
         }
@@ -296,28 +278,25 @@ public class needles extends AppCompatActivity {
             toast.show();
             return;
         }
-        if (typegroup.getCheckedRadioButtonId() == -1) {
-            Toast toast = Toast.makeText(context, "please enter type of exchanger", duration);
+        if (agegroup.getCheckedRadioButtonId() == -1) {
+            Toast toast = Toast.makeText(context, "please enter age of exchanger", duration);
             toast.show();
             return;
         }
         Intent intent = new Intent(this, DBEnter.class);
-        RadioButton button = (RadioButton) findViewById(R.id.otherin);
-        RadioButton buttonout = (RadioButton) findViewById(R.id.otherout);
+        RadioButton button = (RadioButton) findViewById(R.id.OtherGender);
         RadioButton buttonins = (RadioButton) findViewById(R.id.otherins);
-        if  (needles_in == getResources().getString(R.string.reset))
-            needles_in = button.getText().toString();
-        if  (needles_out == getResources().getString(R.string.reset))
-            needles_out = buttonout.getText().toString();
+
+        if  (gender == getResources().getString(R.string.reset))
+            gender = button.getText().toString();
         if  (ins == getResources().getString(R.string.reset))
             ins = buttonins.getText().toString();
         Bundle extras = getIntent().getExtras();
-        String gender= extras.getString("genderchosen");
+        boolean mainmenu = true; // for path in next entry
+        String needles_in= extras.getString("inchosen");
         String race = extras.getString("racechosen");
-        String age = extras.getString("agechosen");
+        String needles_out = extras.getString("outchosen");
         String comment = commentview.getText().toString();
-        Log.d(comment, comment);
-        boolean mainmenu = true;
         intent.putExtra("genderchosen", gender); // pass gender to the next Activity
         intent.putExtra("racechosen", race); // pass race to the next Activity
         intent.putExtra("agechosen", age); // pass age to the next Activity
@@ -330,7 +309,6 @@ public class needles extends AppCompatActivity {
         startActivity(intent); //go to enter client
         finish();
     }
-
 
     public void commententer(View view){
 // get prompts.xml view
@@ -360,34 +338,6 @@ public class needles extends AppCompatActivity {
         alert.show();
     }
 
-    protected void ShowInputNumber() {
-
-        // get prompts.xml view
-        LayoutInflater layoutInflater = LayoutInflater.from(needles.this);
-        View promptView = layoutInflater.inflate(R.layout.numberinput, null);
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(needles.this);
-        alertDialogBuilder.setView(promptView);
-
-        final EditText editText = (EditText) promptView.findViewById(R.id.edittext);
-        // setup a dialog window
-        alertDialogBuilder.setCancelable(false)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    RadioButton button = buttonstore.getInstance().getbuttonhold();
-                    public void onClick(DialogInterface dialog, int id) {
-                        button.setText(editText.getText());
-                    }
-                })
-                .setNegativeButton("Cancel",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });
-
-        // create an alert dialog
-        AlertDialog alert = alertDialogBuilder.create();
-        alert.show();
-    }
     //this function serves to change the input text for an "other" button, and store that as the item
     protected void ShowInput() {
 
@@ -417,7 +367,17 @@ public class needles extends AppCompatActivity {
         AlertDialog alert = alertDialogBuilder.create();
         alert.show();
     }
-
+    public void clearbuttons(View view){
+        RadioGroup gendergroup = (RadioGroup)findViewById(R.id.genderGroup);
+        RadioGroup agegroup = (RadioGroup)findViewById(R.id.AgeGroup);
+        RadioGroup insgroup = (RadioGroup)findViewById(R.id.insuranceGroup);
+        gendergroup.clearCheck();
+        agegroup.clearCheck();
+        insgroup.clearCheck();
+        gender = null;
+        age = null;
+        ins = null;
+    }
 
     }
 
