@@ -30,37 +30,53 @@ public class SiteChange extends AppCompatActivity {
 
         // Check which radio button was clicked
         switch (view.getId()) {
-            case R.id.Comal:
+            case R.id.site1:
                 if (checked)
-                  siteclick = "3rd & Comal";
+                  siteclick = getString(R.string.site1);
                 break;
-            case R.id.Mars:
+            case R.id.site2:
                 if (checked)
-                    siteclick = "Mars North";
+                    siteclick = getString(R.string.site2);
                 break;
-            case R.id.Montopolis:
+            case R.id.site3:
                 if (checked)
-                    siteclick = "Montopolis";;
+                    siteclick = getString(R.string.site3);
                 break;
-            case R.id.Peer:
+            case R.id.site4:
                 if (checked)
-                    siteclick = "Peer Exchange";
+                    siteclick = getString(R.string.site4);
                 break;
-            case R.id.Phases:
+            case R.id.site5:
                 if (checked)
-                    siteclick = "Phases";
+                    siteclick = getString(R.string.site5);
                 break;
-            case R.id.Pickle:
+            case R.id.site6:
                 if (checked)
-                    siteclick = "Pickle";
+                    siteclick = getString(R.string.site6);
                 break;
-            case R.id.Planet:
+            case R.id.site7:
                 if (checked)
-                    siteclick = "Planet K";
+                    siteclick = getString(R.string.site7);
                 break;
-            case R.id.Waller:
+            case R.id.site8:
                 if (checked)
-                    siteclick = "Waller";
+                    siteclick = getString(R.string.site8);
+                break;
+            case R.id.site9:
+                if (checked)
+                    siteclick = getString(R.string.site9);
+                break;
+            case R.id.site10:
+                if (checked)
+                    siteclick = getString(R.string.site10);
+                break;
+            case R.id.othersite:
+                RadioButton sitebutton = (RadioButton) findViewById(R.id.othersite);
+                if (checked)
+                    //set this as the radiobutton to be changed by the showinput function
+                    buttonstore.getInstance().setbuttonhold(sitebutton);
+                EnterCustomSite();
+                siteclick = getResources().getString(R.string.reset);; //this lets us pass the new gender when nextscreen is clicked
                 break;
 
 
@@ -69,8 +85,14 @@ public class SiteChange extends AppCompatActivity {
     }
     public void EnterSite(View view) {
         TextView staffview = (TextView) findViewById(R.id.textView8);
+
+
+        RadioButton button = (RadioButton) findViewById(R.id.othersite);
+        //setting the gender and race fields to what you changed them to earlier
+        if  (siteclick == getResources().getString(R.string.reset))
+            siteclick = button.getText().toString();
         SiteHolder.getInstance().setstaffhold(staffview.getText().toString());
-       SiteHolder.getInstance().setsitehold(siteclick);
+        SiteHolder.getInstance().setsitehold(siteclick);
         SiteHolder.getInstance().setdatehold(Calendar.getInstance());
 
         Intent intent = new Intent(this, MainActivity.class);
@@ -107,4 +129,33 @@ public class SiteChange extends AppCompatActivity {
         alert.show();
     }
 
+    //this function serves to change the input text for an "other" button, and store that as the item
+    protected void EnterCustomSite() {
+
+        // get prompts.xml view
+        LayoutInflater layoutInflater = LayoutInflater.from(SiteChange.this);
+        View promptView = layoutInflater.inflate(R.layout.siteinput, null);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(SiteChange.this);
+        alertDialogBuilder.setView(promptView);
+
+        final EditText editText = (EditText) promptView.findViewById(R.id.edittext);
+        // setup a dialog window
+        alertDialogBuilder.setCancelable(false)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    RadioButton button = buttonstore.getInstance().getbuttonhold();
+                    public void onClick(DialogInterface dialog, int id) {
+                        button.setText(editText.getText());
+                    }
+                })
+                .setNegativeButton("Cancel",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+        // create an alert dialog
+        AlertDialog alert = alertDialogBuilder.create();
+        alert.show();
+    }
 }

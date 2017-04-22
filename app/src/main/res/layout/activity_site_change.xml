@@ -27,8 +27,8 @@
         <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="3rd &amp; Comal"
-        android:id="@+id/Comal"
+        android:text="@string/site1"
+        android:id="@+id/site1"
         android:layout_alignParentTop="true"
         android:onClick="onSiteButtonClicked"
         android:layout_alignParentLeft="true"
@@ -38,79 +38,114 @@
     <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mars North"
-        android:id="@+id/Mars"
-        android:layout_below="@+id/Comal"
+        android:text="@string/site2"
+        android:id="@+id/site2"
+        android:layout_below="@+id/site1"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:checked="false"
         android:onClick="onSiteButtonClicked" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Montopolis"
-        android:id="@+id/Montopolis"
-        android:layout_below="@+id/Mars"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:checked="false"
-        android:onClick="onSiteButtonClicked" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Peer Exchange"
-        android:id="@+id/Peer"
-        android:layout_below="@+id/Montopolis"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:checked="false"
-        android:onClick="onSiteButtonClicked" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/site3"
+            android:id="@+id/site3"
+            android:layout_below="@+id/site2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="false"
+            android:onClick="onSiteButtonClicked" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Phases"
-        android:id="@+id/Phases"
-        android:layout_below="@+id/Peer"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:checked="false"
-        android:onClick="onSiteButtonClicked" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/site4"
+            android:id="@+id/site4"
+            android:layout_below="@+id/site3"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="false"
+            android:onClick="onSiteButtonClicked" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pickle"
-        android:id="@+id/Pickle"
-        android:layout_below="@+id/Phases"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:checked="false"
-        android:onClick="onSiteButtonClicked" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/site5"
+            android:id="@+id/site5"
+            android:layout_below="@+id/site4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="false"
+            android:onClick="onSiteButtonClicked" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Planet K"
-        android:id="@+id/Planet"
-        android:layout_below="@+id/Pickle"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:checked="false"
-        android:onClick="onSiteButtonClicked" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/site6"
+            android:id="@+id/site6"
+            android:layout_below="@+id/site5"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="false"
+            android:onClick="onSiteButtonClicked" />
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Waller"
-        android:id="@+id/Waller"
-        android:layout_below="@+id/Planet"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:checked="false"
-        android:onClick="onSiteButtonClicked" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/site7"
+            android:id="@+id/site7"
+            android:layout_below="@+id/site6"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="false"
+            android:onClick="onSiteButtonClicked" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/site8"
+            android:id="@+id/site8"
+            android:layout_below="@+id/site7"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="false"
+            android:onClick="onSiteButtonClicked" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/site9"
+            android:id="@+id/site9"
+            android:layout_below="@+id/site8"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="false"
+            android:onClick="onSiteButtonClicked" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/site10"
+            android:id="@+id/site10"
+            android:layout_below="@+id/site9"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="false"
+            android:onClick="onSiteButtonClicked" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/othersite"
+            android:id="@+id/othersite"
+            android:layout_below="@+id/site10"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="false"
+            android:onClick="onSiteButtonClicked" />
+
     </RadioGroup>
 
 

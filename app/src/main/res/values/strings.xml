@@ -51,6 +51,20 @@
     <string name="age10">60-65</string>
     <string name="age11">65-70</string>
     <string name="age12">75+</string>
+    <string name="site1">3rd &amp; Comal</string>
+    <string name="site2">Cannon South</string>
+    <string name="site3">Mars South</string>
+    <string name="site4">Montopolis</string>
+    <string name="site5">Peer Exchange</string>
+    <string name="site6">Phases</string>
+    <string name="site7">Pickle</string>
+    <string name="site8">Planet K</string>
+    <string name="site9">Rogge/Manor</string>
+    <string name="site10">St. John\'s</string>
+    <string name="othersite">Other Site</string>
+
+
+    
 
     <string-array name="genderarray">
     <item>"---"</item>
