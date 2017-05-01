@@ -92,8 +92,8 @@ public class AndroidDatabaseManager extends Activity implements OnItemClickListe
 		firstrowlp.weight = 1;
 
 		TextView maintext = new TextView(AndroidDatabaseManager.this);
-		maintext.setText("Select Table");
-		maintext.setTextSize(22);
+		maintext.setText("Click 'Click here' and choose 'participants'");
+		maintext.setTextSize(16);
 		maintext.setLayoutParams(firstrowlp);
 		select_table=new Spinner(AndroidDatabaseManager.this);
 		select_table.setLayoutParams(firstrowlp);
@@ -140,14 +140,9 @@ public class AndroidDatabaseManager extends Activity implements OnItemClickListe
 		submitQuery.setBackgroundColor(Color.parseColor("#BAE7F6"));
 		mainLayout.addView(submitQuery);
 
-		final TextView help = new TextView(AndroidDatabaseManager.this);
-		help.setText("Click on the row below to update values or delete the tuple");
-		help.setPadding(0,5,0,5);
-
 		// the spinner which gives user a option to add new row , drop or delete table
 		final Spinner spinnertable =new Spinner(AndroidDatabaseManager.this);
 		mainLayout.addView(spinnertable);
-		mainLayout.addView(help);
 		hsv.setPadding(0,10,0,10);
 		hsv.setScrollbarFadingEnabled(false);
 		hsv.setScrollBarStyle(View.SCROLLBARS_OUTSIDE_INSET);
@@ -175,7 +170,7 @@ public class AndroidDatabaseManager extends Activity implements OnItemClickListe
 		tvmessage =new TextView(AndroidDatabaseManager.this);
 
 		tvmessage.setText("Error Messages will be displayed here");
-		String Query = "SELECT name _id FROM sqlite_master WHERE type ='table'";
+		String Query = "SELECT name _id FROM sqlite_master WHERE name LIKE 'participants'";
 		tvmessage.setTextSize(18);
 		mainLayout.addView(tvmessage);
 
@@ -191,7 +186,6 @@ public class AndroidDatabaseManager extends Activity implements OnItemClickListe
 				indexInfo.isCustomQuery=true;
 				secondrow.setVisibility(View.GONE);
 				spinnertable.setVisibility(View.GONE);
-				help.setVisibility(View.GONE);
 				customquerytext.setVisibility(View.VISIBLE);
 				submitQuery.setVisibility(View.VISIBLE);
 				select_table.setSelection(0);
@@ -319,7 +313,6 @@ public class AndroidDatabaseManager extends Activity implements OnItemClickListe
 					hsv.setVisibility(View.GONE);
 					thirdrow.setVisibility(View.GONE);
 					spinnertable.setVisibility(View.GONE);
-					help.setVisibility(View.GONE);
 					tvmessage.setVisibility(View.GONE);
 					customquerytext.setVisibility(View.GONE);
 					submitQuery.setVisibility(View.GONE);
@@ -328,7 +321,6 @@ public class AndroidDatabaseManager extends Activity implements OnItemClickListe
 				if(pos!=0){
 					secondrow.setVisibility(View.VISIBLE);
 					spinnertable.setVisibility(View.VISIBLE);
-					help.setVisibility(View.VISIBLE);
 					customquerytext.setVisibility(View.GONE);
 					submitQuery.setVisibility(View.GONE);
 					customQuery.setVisibility(View.VISIBLE);
@@ -348,10 +340,7 @@ public class AndroidDatabaseManager extends Activity implements OnItemClickListe
 					//removes any data if present in the table layout
 					tableLayout.removeAllViews();
 					ArrayList<String> spinnertablevalues = new ArrayList<String>();
-					spinnertablevalues.add("Click here to change this table");
-					spinnertablevalues.add("Add row to this table");
-					spinnertablevalues.add("Delete this table");
-					spinnertablevalues.add("Drop this table");
+					spinnertablevalues.add("Click the row you want to change");
 					ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, spinnertablevalues);
 					spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
 
@@ -700,8 +689,7 @@ public class AndroidDatabaseManager extends Activity implements OnItemClickListe
 
 					}
 					else{
-						//if the cursor returned from the database is empty we show that table is empty 	
-						help.setVisibility(View.GONE);
+						//if the cursor returned from the database is empty we show that table is empty
 						tableLayout.removeAllViews();
 						getcolumnnames();
 						TableRow tableheader2 = new TableRow(getApplicationContext());
@@ -761,9 +749,8 @@ public class AndroidDatabaseManager extends Activity implements OnItemClickListe
 		Cursor c2=indexInfo.maincursor;
 		// a spinner which gives options to update or delete the row which user has selected
 		ArrayList<String> spinnerArray = new ArrayList<String>();
-		spinnerArray.add("Click Here to Change this row");
+		spinnerArray.add("Click Here and select 'Update this row'");
 		spinnerArray.add("Update this row");
-		spinnerArray.add("Delete this row");
 
 		//create a layout with text values which has the column names and 
 		//edit texts which has the values of the row which user has selected
@@ -832,6 +819,7 @@ public class AndroidDatabaseManager extends Activity implements OnItemClickListe
 		crudadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
 		crud_dropdown.setAdapter(crudadapter);
+		//noinspection ResourceType
 		lcrud.setId(299);
 		lcrud.addView(crud_dropdown,paramcrudtext);
 
@@ -956,7 +944,7 @@ public class AndroidDatabaseManager extends Activity implements OnItemClickListe
 												if(tempc.getString(0).equalsIgnoreCase("Success"))
 												{
 													tvmessage.setBackgroundColor(Color.parseColor("#2ecc71"));
-													tvmessage.setText(indexInfo.table_name+" table Updated Successfully");
+													tvmessage.setText("changes have been saved");
 													refreshTable(0);
 												}
 												else

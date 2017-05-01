@@ -274,8 +274,8 @@ Spinner racesp1;
         int second4=Integer.parseInt(numsp4.getSelectedItem().toString());
         int second5=Integer.parseInt(numsp5.getSelectedItem().toString());
         int second6=Integer.parseInt(numsp6.getSelectedItem().toString());
-        int needlesinavg = needlesin / (second1 + second2 + second3 + second4 + second5 + second6);
-        int needlesoutavg = needlesout / (second1 + second2 + second3 + second4 + second5 + second6);
+        int needlesinavg = needlesin / (second1 + second2 + second3 + second4 + second5 + second6 + 1);
+        int needlesoutavg = needlesout / (second1 + second2 + second3 + second4 + second5 + second6 + 1);
         //initialize db for entry
         DBHandler db = new DBHandler(this);
 
