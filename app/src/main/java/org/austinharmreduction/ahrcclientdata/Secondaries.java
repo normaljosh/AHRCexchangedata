@@ -3,6 +3,7 @@ package org.austinharmreduction.ahrcclientdata;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
@@ -157,6 +158,16 @@ Spinner racesp1;
         racesp6.setAdapter(raceadapter);
         agesp6.setAdapter(ageadapter);
         inssp6.setAdapter(insadapter);
+
+        //set default number of people to 1
+        numsp1.setSelection(1);
+        numsp2.setSelection(1);
+        numsp3.setSelection(1);
+        numsp4.setSelection(1);
+        numsp5.setSelection(1);
+        numsp6.setSelection(1);
+
+
     }
     public void newclient(View view) {
         Bundle extras = getIntent().getExtras();
@@ -172,14 +183,60 @@ Spinner racesp1;
 
 
         // divide # needles in and out by # of secondaries
-        int second1=Integer.parseInt(numsp1.getSelectedItem().toString());
-        int second2=Integer.parseInt(numsp2.getSelectedItem().toString());
-        int second3=Integer.parseInt(numsp3.getSelectedItem().toString());
-        int second4=Integer.parseInt(numsp4.getSelectedItem().toString());
-        int second5=Integer.parseInt(numsp5.getSelectedItem().toString());
-        int second6=Integer.parseInt(numsp6.getSelectedItem().toString());
-        int needlesinavg = needlesin / (second1 + second2 + second3 + second4 + second5 + second6);
-        int needlesoutavg = needlesout / (second1 + second2 + second3 + second4 + second5 + second6);
+
+
+        String gender1 = gendersp1.getSelectedItem().toString();
+        String gender2 = gendersp2.getSelectedItem().toString();
+        String gender3 = gendersp3.getSelectedItem().toString();
+        String gender4 = gendersp4.getSelectedItem().toString();
+        String gender5 = gendersp5.getSelectedItem().toString();
+        String gender6 = gendersp6.getSelectedItem().toString();
+        int second1, second2, second3, second4, second5, second6;
+
+
+        if(!gender1.equals(getString(R.string.blank))) {
+
+            second1 = Integer.parseInt(numsp1.getSelectedItem().toString());
+        }
+        else {
+            second1 = 0;
+        }
+        if(!gender2.equals(getString(R.string.blank))) {
+            second2 = Integer.parseInt(numsp2.getSelectedItem().toString());
+        }
+        else { second2 = 0;
+        }
+        if(!gender3.equals(getString(R.string.blank))) {
+
+            second3 = Integer.parseInt(numsp3.getSelectedItem().toString());
+        }
+        else{ second3 = 0;
+        }
+        if(!gender4.equals(getString(R.string.blank))) {
+            second4 = Integer.parseInt(numsp4.getSelectedItem().toString());
+        }
+        else {
+            second4 = 0;
+        }
+
+        if(!gender5.equals(getString(R.string.blank))) {
+
+            second5 = Integer.parseInt(numsp5.getSelectedItem().toString());
+        }
+        else {
+            second5 = 0;
+            Log.d("myTag", "This is my message");
+        }
+
+        if(!gender6.equals(getString(R.string.blank))) {
+            second6 = Integer.parseInt(numsp6.getSelectedItem().toString());
+        }
+        else {
+            second6 = 0;
+        }
+
+        int needlesinavg = needlesin / (second1 + second2 + second3 + second4 + second5 + second6 + 1);
+        int needlesoutavg = needlesout / (second1 + second2 + second3 + second4 + second5 + second6 + 1 );
         //initialize db for entry
         DBHandler db = new DBHandler(this);
 
@@ -231,7 +288,7 @@ Spinner racesp1;
                         Integer.toString(needlesoutavg), getResources().getString(R.string.type3), ins, comment));
             }
         }
-        if(second5 != 0) {
+        if(second5 != 0 ) {
             gender = gendersp5.getSelectedItem().toString();
             race = racesp5.getSelectedItem().toString();
             age = agesp5.getSelectedItem().toString();
@@ -268,12 +325,57 @@ Spinner racesp1;
         String comment = extras.getString("commentchosen");
 
         // divide # needles in and out by # of secondaries
-        int second1=Integer.parseInt(numsp1.getSelectedItem().toString());
-        int second2=Integer.parseInt(numsp2.getSelectedItem().toString());
-        int second3=Integer.parseInt(numsp3.getSelectedItem().toString());
-        int second4=Integer.parseInt(numsp4.getSelectedItem().toString());
-        int second5=Integer.parseInt(numsp5.getSelectedItem().toString());
-        int second6=Integer.parseInt(numsp6.getSelectedItem().toString());
+        String gender1 = gendersp1.getSelectedItem().toString();
+        String gender2 = gendersp2.getSelectedItem().toString();
+        String gender3 = gendersp3.getSelectedItem().toString();
+        String gender4 = gendersp4.getSelectedItem().toString();
+        String gender5 = gendersp5.getSelectedItem().toString();
+        String gender6 = gendersp6.getSelectedItem().toString();
+        int second1, second2, second3, second4, second5, second6;
+
+
+        if(!gender1.equals(getString(R.string.blank))) {
+
+            second1 = Integer.parseInt(numsp1.getSelectedItem().toString());
+        }
+        else {
+            second1 = 0;
+            Log.d("second1 set to ", Integer.toString(second1));
+        }
+        if(!gender2.equals(getString(R.string.blank))) {
+            second2 = Integer.parseInt(numsp2.getSelectedItem().toString());
+        }
+        else { second2 = 0;
+            Log.d("second2 set to ", Integer.toString(second1));
+        }
+        if(!gender3.equals(getString(R.string.blank))) {
+
+            second3 = Integer.parseInt(numsp3.getSelectedItem().toString());
+        }
+        else{ second3 = 0;
+        }
+        if(!gender4.equals(getString(R.string.blank))) {
+            second4 = Integer.parseInt(numsp4.getSelectedItem().toString());
+        }
+        else {
+            second4 = 0;
+        }
+
+        if(!gender5.equals(getString(R.string.blank))) {
+
+            second5 = Integer.parseInt(numsp5.getSelectedItem().toString());
+        }
+        else {
+            second5 = 0;
+        }
+        if(!gender6.equals(getString(R.string.blank))) {
+            second6 = Integer.parseInt(numsp6.getSelectedItem().toString());
+        }
+        else {
+            second6 = 0;
+        }
+
+
         int needlesinavg = needlesin / (second1 + second2 + second3 + second4 + second5 + second6 + 1);
         int needlesoutavg = needlesout / (second1 + second2 + second3 + second4 + second5 + second6 + 1);
         //initialize db for entry

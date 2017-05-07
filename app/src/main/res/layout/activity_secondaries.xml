@@ -28,15 +28,16 @@
         android:layout_alignEnd="@+id/backtomain"
         android:backgroundTint="#cc0000" />
 
+
     <TextView
+        android:id="@+id/displayspinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/displayspinner"
-        android:layout_below="@+id/gendersp1"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="108dp" />
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/gendersp1"
+        android:layout_marginTop="108dp"
+        android:text="   " />
 
     <TextView
         android:layout_width="wrap_content"
@@ -411,6 +412,16 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:backgroundTint="#cc0000" />
+
+    <TextView
+        android:id="@+id/rowmessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/newclient"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="12dp"
+        android:text="Please enter number of secondaries and info. (no need to change 1 to zero for blank rows)" />
 
 
 </RelativeLayout>
