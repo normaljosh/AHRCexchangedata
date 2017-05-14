@@ -35,7 +35,10 @@ import java.util.List;
  * Created by Josh Leibowitz on 5/7/2017.
  */
 
+
+
 public class debugdata extends AppCompatActivity {
+    public Integer offset;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,8 +46,30 @@ public class debugdata extends AppCompatActivity {
         //initialize database
         DBHandler db = new DBHandler(this);
         //write all database to list called "clients"
-        List<ClientFormat> clients = db.getLastClients();
+        List<ClientFormat> clients = db.getLastClients(0);
+        offset = 0;
+        Button Displaybutton = (Button) findViewById(R.id.showrowbutton);
+        Displaybutton.setText(stringfromclient(clients.get(1)));
 
+        Button Displaybutton2 = (Button) findViewById(R.id.showrowbutton2);
+        Displaybutton2.setText(stringfromclient(clients.get(2)));
+
+        Button Displaybutton3 = (Button) findViewById(R.id.showrowbutton3);
+        Displaybutton3.setText(stringfromclient(clients.get(3)));
+
+        Button Displaybutton4 = (Button) findViewById(R.id.showrowbutton4);
+        Displaybutton4.setText(stringfromclient(clients.get(4)));
+
+        Button Displaybutton5 = (Button) findViewById(R.id.showrowbutton5);
+        Displaybutton5.setText(stringfromclient(clients.get(5)));
+
+    }
+    public void nextbutton( View view) {
+        offset = offset + 5;
+        //initialize database
+        DBHandler db = new DBHandler(this);
+        //write all database to list called "clients"
+        List<ClientFormat> clients = db.getLastClients(offset);
         Button Displaybutton = (Button) findViewById(R.id.showrowbutton);
         Displaybutton.setText(stringfromclient(clients.get(1)));
 
@@ -60,6 +85,7 @@ public class debugdata extends AppCompatActivity {
         Button Displaybutton5 = (Button) findViewById(R.id.showrowbutton5);
         Displaybutton5.setText(stringfromclient(clients.get(5)));
     }
+
 
 //gets string to display from a client object
 public static String stringfromclient( ClientFormat grabclient){

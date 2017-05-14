@@ -104,10 +104,10 @@ public class DBHandler extends SQLiteOpenHelper {
     }*/
 
  // Getting last 10 clients
- public List<ClientFormat> getLastClients() {
+ public List<ClientFormat> getLastClients(Integer offsetnum) {
      List<ClientFormat> ClientList = new ArrayList<ClientFormat>();
      // Select All Query
-     String selectQuery = "SELECT * FROM " + TABLE_CLIENTS + " ORDER BY ID DESC LIMIT 10";
+     String selectQuery = "SELECT * FROM " + TABLE_CLIENTS + " ORDER BY ID DESC LIMIT 10 OFFSET " + Integer.toString(offsetnum) ;
      SQLiteDatabase db = this.getWritableDatabase();
      Cursor cursor = db.rawQuery(selectQuery, null);
      // looping through all rows and adding to list
