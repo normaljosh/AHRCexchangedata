@@ -11,6 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".EmailCSV" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,6 +27,7 @@
             android:name=".AndroidDatabaseManager"
             android:theme="@style/Theme.AppCompat.Light" />
         <activity android:name=".SiteChange" />
+        <activity android:name=".clientedit" />
         <activity android:name=".Secondaries"></activity>
     </application>
 

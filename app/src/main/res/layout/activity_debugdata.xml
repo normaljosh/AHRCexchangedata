@@ -13,14 +13,16 @@
         android:id="@+id/showrowbutton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="leetree"
-        android:layout_below="@+id/textView3"/>
+        android:layout_below="@+id/textView3"
+        android:onClick="changeclient1"
+        android:text="leetree" />
 
     <Button
         android:id="@+id/showrowbutton2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="leetree"
+        android:onClick="changeclient2"
         android:layout_below="@+id/showrowbutton"/>
 
     <Button
@@ -28,12 +30,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="leetree"
+        android:onClick="changeclient3"
         android:layout_below="@+id/showrowbutton2"
         />
     <Button
         android:id="@+id/showrowbutton4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="changeclient4"
         android:text="leetree"
         android:layout_below="@+id/showrowbutton3"/>
 
@@ -41,6 +45,7 @@
         android:id="@+id/showrowbutton5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="changeclient5"
         android:text="leetree"
         android:layout_below="@+id/showrowbutton4"
         />
@@ -53,12 +58,14 @@
         android:layout_alignParentRight="true"
         android:onClick="nextbutton"
         android:text="Next items" />
+
     <Button
         android:id="@+id/last"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Last items"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true"
+        android:onClick="prevbutton"
+        android:text="Last items" />
 
 
 </RelativeLayout>
