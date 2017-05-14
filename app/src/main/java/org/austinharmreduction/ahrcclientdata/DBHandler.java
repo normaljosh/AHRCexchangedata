@@ -103,6 +103,37 @@ public class DBHandler extends SQLiteOpenHelper {
         return oneclient;
     }*/
 
+ // Getting last 10 clients
+ public List<ClientFormat> getLastClients() {
+     List<ClientFormat> ClientList = new ArrayList<ClientFormat>();
+     // Select All Query
+     String selectQuery = "SELECT * FROM " + TABLE_CLIENTS + " ORDER BY ID DESC LIMIT 10";
+     SQLiteDatabase db = this.getWritableDatabase();
+     Cursor cursor = db.rawQuery(selectQuery, null);
+     // looping through all rows and adding to list
+     if (cursor.moveToFirst()) {
+         do {
+             ClientFormat client = new ClientFormat();
+             client.setid(Integer.parseInt(cursor.getString(0)));
+             client.setdate(cursor.getString(1));
+             client.setstaff(cursor.getString(2));
+             client.setsite(cursor.getString(3));
+             client.setgender(cursor.getString(4));
+             client.setrace(cursor.getString(5));
+             client.setage(cursor.getString(6));
+             client.setneedles_in(cursor.getString(7));
+             client.setneedles_out(cursor.getString(8));
+             client.settype(cursor.getString(9));
+             client.setins(cursor.getString(10));
+             client.setcomment(cursor.getString(11));
+             // Adding contact to list
+             ClientList.add(client);
+         } while (cursor.moveToNext());
+     }
+     // return contact list
+     return ClientList;
+ }
+
     // Getting All Clients
     public List<ClientFormat> getAllClients() {
         List<ClientFormat> ClientList = new ArrayList<ClientFormat>();

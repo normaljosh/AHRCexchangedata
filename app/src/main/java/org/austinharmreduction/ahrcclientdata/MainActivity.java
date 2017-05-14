@@ -28,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AndroidDatabaseManager.class);
         startActivity(intent); //go to enter client
     }
+    public void debugdata(View view) {
+        Intent intent = new Intent(this, debugdata.class);
+        startActivity(intent); //go to enter client
+    }
 
     /** Called when the user clicks the Enter Client button */
     public void Enter(View view) {

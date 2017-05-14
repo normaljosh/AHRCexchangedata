@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Click the item you want to edit" />
+
+    <Button
+        android:id="@+id/showrowbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="leetree"
+        android:layout_below="@+id/textView3"/>
+
+    <Button
+        android:id="@+id/showrowbutton2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="leetree"
+        android:layout_below="@+id/showrowbutton"/>
+
+    <Button
+        android:id="@+id/showrowbutton3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="leetree"
+        android:layout_below="@+id/showrowbutton2"
+        />
+    <Button
+        android:id="@+id/showrowbutton4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="leetree"
+        android:layout_below="@+id/showrowbutton3"/>
+
+    <Button
+        android:id="@+id/showrowbutton5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="leetree"
+        android:layout_below="@+id/showrowbutton4"
+        />
+
+
+</LinearLayout>

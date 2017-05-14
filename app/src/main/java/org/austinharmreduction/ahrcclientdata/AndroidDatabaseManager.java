@@ -369,7 +369,7 @@ public class AndroidDatabaseManager extends Activity implements OnItemClickListe
 
 					adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 					spinnertable.setAdapter(adapter);
-					String Query2 ="select * from "+c.getString(0);
+					String Query2 ="select Staff, Site, Sex, Race, Age, Units_in, Units_Out, Type, Insurance from "+c.getString(0)+ " ORDER BY ID DESC";
 					Log.d("",""+Query2);
 
 					//getting contents of the table which user selected from the select_table spinner
@@ -1032,7 +1032,7 @@ public class AndroidDatabaseManager extends Activity implements OnItemClickListe
 		tableLayout.removeAllViews();
 		if(d==0)
 		{
-			String Query8 = "select * from "+indexInfo.table_name;
+			String Query8 = "select Staff, Site, Sex, Race, Age, Units_in, Units_Out, Type, Insurance from " +indexInfo.table_name + " ORDER BY ID DESC";
 			ArrayList<Cursor> alc3=dbm.getData(Query8);
 			c3=alc3.get(0);
 			//saving cursor to the static indexinfo class which can be resued by the other functions

@@ -77,5 +77,15 @@
         android:layout_toRightOf="@+id/csvwrite"
         android:layout_toEndOf="@+id/csvwrite" />
 
+    <Button
+        android:id="@+id/debug"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SiteChange"
+        android:layout_toLeftOf="@+id/seedatabase"
+        android:layout_toStartOf="@+id/seedatabase"
+        android:onClick="debugdata"
+        android:text="debug" />
+
 
 </RelativeLayout>

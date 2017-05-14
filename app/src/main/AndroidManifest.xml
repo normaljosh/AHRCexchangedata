@@ -21,6 +21,7 @@
         <activity android:name=".needles" />
         <activity android:name=".EnterClient" />
         <activity android:name=".DBEnter" />
+        <activity android:name=".debugdata" />
         <activity
             android:name=".AndroidDatabaseManager"
             android:theme="@style/Theme.AppCompat.Light" />
