@@ -17,7 +17,7 @@
         android:id="@+id/edittext"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter text here.."
+        android:hint="Enter number here.."
         android:inputType="number"
         android:maxLines="1"
         android:padding="10dp" />

@@ -1,5 +1,6 @@
 package org.austinharmreduction.ahrcclientdata;
 
+import android.widget.Button;
 import android.widget.RadioButton;
 
 /**
@@ -19,4 +20,5 @@ public class buttonstore {
     private buttonstore() {
         // Exists only to defeat instantiation.
     }
+
 }

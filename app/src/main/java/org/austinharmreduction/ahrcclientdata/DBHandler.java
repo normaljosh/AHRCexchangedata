@@ -134,6 +134,14 @@ public class DBHandler extends SQLiteOpenHelper {
      return ClientList;
  }
 
+ //update an item by id and item
+    public void updateclient (Integer id, String item, String changeto){
+        String selectQuery = "UPDATE  " + TABLE_CLIENTS + " SET " + item + " = '" + changeto + "' WHERE ID LIKE " + Integer.toString(id) ;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        cursor.moveToFirst();
+        db.close();
+    }
 
     // Getting specific client by id
     public List<ClientFormat> getClientfromId(Integer id) {

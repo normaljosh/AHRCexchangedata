@@ -7,7 +7,7 @@
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Click the item you want to edit" />
+        android:text="Click the person you want to edit (goes from most recent)" />
 
     <Button
         android:id="@+id/showrowbutton"
@@ -57,7 +57,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:onClick="nextbutton"
-        android:text="Next items" />
+        android:text="Next 5" />
 
     <Button
         android:id="@+id/last"
@@ -65,7 +65,16 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:onClick="prevbutton"
-        android:text="Last items" />
+        android:text="Last 5" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="gotomain"
+        android:text="Back to main menu" />
 
 
 </RelativeLayout>

@@ -25,11 +25,11 @@ public class MainActivity extends AppCompatActivity {
     //gsgfd
     /** Called when the user clicks the See Database button, starts the AndroidDatabaseManager*/
     public void seedatabase(View view) {
-        Intent intent = new Intent(this, AndroidDatabaseManager.class);
+        Intent intent = new Intent(this, debugdata.class);
         startActivity(intent); //go to enter client
     }
     public void debugdata(View view) {
-        Intent intent = new Intent(this, debugdata.class);
+        Intent intent = new Intent(this, AndroidDatabaseManager.class);
         startActivity(intent); //go to enter client
     }
 

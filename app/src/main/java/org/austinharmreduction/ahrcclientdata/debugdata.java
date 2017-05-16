@@ -53,19 +53,19 @@ public class debugdata extends AppCompatActivity {
         List<ClientFormat> clients = db.getLastClients(0);
         offset = 0;
         Button Displaybutton = (Button) findViewById(R.id.showrowbutton);
-        Displaybutton.setText(stringfromclient(clients.get(1)));
+        Displaybutton.setText(stringfromclient(clients.get(0)));
 
         Button Displaybutton2 = (Button) findViewById(R.id.showrowbutton2);
-        Displaybutton2.setText(stringfromclient(clients.get(2)));
+        Displaybutton2.setText(stringfromclient(clients.get(1)));
 
         Button Displaybutton3 = (Button) findViewById(R.id.showrowbutton3);
-        Displaybutton3.setText(stringfromclient(clients.get(3)));
+        Displaybutton3.setText(stringfromclient(clients.get(2)));
 
         Button Displaybutton4 = (Button) findViewById(R.id.showrowbutton4);
-        Displaybutton4.setText(stringfromclient(clients.get(4)));
+        Displaybutton4.setText(stringfromclient(clients.get(3)));
 
         Button Displaybutton5 = (Button) findViewById(R.id.showrowbutton5);
-        Displaybutton5.setText(stringfromclient(clients.get(5)));
+        Displaybutton5.setText(stringfromclient(clients.get(4)));
 
     }
     public void nextbutton( View view) {
@@ -75,19 +75,19 @@ public class debugdata extends AppCompatActivity {
         //write all database to list called "clients"
         List<ClientFormat> clients = db.getLastClients(offset);
         Button Displaybutton = (Button) findViewById(R.id.showrowbutton);
-        Displaybutton.setText(stringfromclient(clients.get(1)));
+        Displaybutton.setText(stringfromclient(clients.get(0)));
 
         Button Displaybutton2 = (Button) findViewById(R.id.showrowbutton2);
-        Displaybutton2.setText(stringfromclient(clients.get(2)));
+        Displaybutton2.setText(stringfromclient(clients.get(1)));
 
         Button Displaybutton3 = (Button) findViewById(R.id.showrowbutton3);
-        Displaybutton3.setText(stringfromclient(clients.get(3)));
+        Displaybutton3.setText(stringfromclient(clients.get(2)));
 
         Button Displaybutton4 = (Button) findViewById(R.id.showrowbutton4);
-        Displaybutton4.setText(stringfromclient(clients.get(4)));
+        Displaybutton4.setText(stringfromclient(clients.get(3)));
 
         Button Displaybutton5 = (Button) findViewById(R.id.showrowbutton5);
-        Displaybutton5.setText(stringfromclient(clients.get(5)));
+        Displaybutton5.setText(stringfromclient(clients.get(4)));
     }
     public void prevbutton( View view) {
         if(offset > 4) {
@@ -98,19 +98,19 @@ public class debugdata extends AppCompatActivity {
         //write all database to list called "clients"
         List<ClientFormat> clients = db.getLastClients(offset);
         Button Displaybutton = (Button) findViewById(R.id.showrowbutton);
-        Displaybutton.setText(stringfromclient(clients.get(1)));
+        Displaybutton.setText(stringfromclient(clients.get(0)));
 
         Button Displaybutton2 = (Button) findViewById(R.id.showrowbutton2);
-        Displaybutton2.setText(stringfromclient(clients.get(2)));
+        Displaybutton2.setText(stringfromclient(clients.get(1)));
 
         Button Displaybutton3 = (Button) findViewById(R.id.showrowbutton3);
-        Displaybutton3.setText(stringfromclient(clients.get(3)));
+        Displaybutton3.setText(stringfromclient(clients.get(2)));
 
         Button Displaybutton4 = (Button) findViewById(R.id.showrowbutton4);
-        Displaybutton4.setText(stringfromclient(clients.get(4)));
+        Displaybutton4.setText(stringfromclient(clients.get(3)));
 
         Button Displaybutton5 = (Button) findViewById(R.id.showrowbutton5);
-        Displaybutton5.setText(stringfromclient(clients.get(5)));
+        Displaybutton5.setText(stringfromclient(clients.get(4)));
     }
 
 
@@ -145,7 +145,7 @@ public static String stringfromclient( ClientFormat grabclient){
         DBHandler db = new DBHandler(this);
         //write all database to list called "clients"
         List<ClientFormat> clients = db.getLastClients(offset);
-        id = clients.get(1).getid();
+        id = clients.get(0).getid();
         intent.putExtra("idchosen", id);
         startActivity(intent); //go to enter client
     }
@@ -157,7 +157,7 @@ public static String stringfromclient( ClientFormat grabclient){
         DBHandler db = new DBHandler(this);
         //write all database to list called "clients"
         List<ClientFormat> clients = db.getLastClients(offset);
-        id = clients.get(2).getid();
+        id = clients.get(1).getid();
         intent.putExtra("idchosen", id);
         startActivity(intent); //go to enter client
     }
@@ -169,7 +169,7 @@ public static String stringfromclient( ClientFormat grabclient){
         DBHandler db = new DBHandler(this);
         //write all database to list called "clients"
         List<ClientFormat> clients = db.getLastClients(offset);
-        id = clients.get(3).getid();
+        id = clients.get(2).getid();
         intent.putExtra("idchosen", id);
         startActivity(intent); //go to enter client
     }
@@ -181,7 +181,7 @@ public static String stringfromclient( ClientFormat grabclient){
         DBHandler db = new DBHandler(this);
         //write all database to list called "clients"
         List<ClientFormat> clients = db.getLastClients(offset);
-        id = clients.get(4).getid();
+        id = clients.get(3).getid();
         intent.putExtra("idchosen", id);
         startActivity(intent); //go to enter client
     }
@@ -193,9 +193,14 @@ public static String stringfromclient( ClientFormat grabclient){
         DBHandler db = new DBHandler(this);
         //write all database to list called "clients"
         List<ClientFormat> clients = db.getLastClients(offset);
-        id = clients.get(5).getid();
+        id = clients.get(4).getid();
         intent.putExtra("idchosen", id);
         startActivity(intent); //go to enter client
+    }
+
+    public void gotomain(View v){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
 

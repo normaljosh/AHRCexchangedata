@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
@@ -79,9 +80,11 @@
         android:id="@+id/sitebutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/textView11"
         android:layout_toRightOf="@+id/textView11"
-    android:layout_alignParentTop="true" />
+        android:onClick="changebutton"
+        android:text="Button" />
 
     <Button
         android:id="@+id/sexbutton"
@@ -89,6 +92,7 @@
         android:layout_height="wrap_content"
         android:text="Button"
         android:layout_toRightOf="@+id/textView12"
+        android:onClick="changebutton"
         android:layout_below="@+id/sitebutton" />
 
     <Button
@@ -96,6 +100,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
+        android:onClick="changebutton"
         android:layout_toRightOf="@+id/textView13"
         android:layout_below="@+id/sexbutton" />
 
@@ -104,6 +109,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
+        android:onClick="changenumber"
         android:layout_toRightOf="@+id/textView14"
         android:layout_below="@+id/racebutton" />
 
@@ -112,6 +118,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
+        android:onClick="changenumber"
         android:layout_toRightOf="@+id/textView15"
         android:layout_below="@+id/agebutton" />
 
@@ -120,6 +127,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
+        android:onClick="changenumber"
         android:layout_toRightOf="@+id/textView16"
         android:layout_below="@+id/inbutton" />
 
@@ -128,6 +136,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
+        android:onClick="changebutton"
         android:layout_toRightOf="@+id/textView17"
         android:layout_below="@+id/outbutton" />
 
@@ -136,7 +145,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
+        android:onClick="changebutton"
         android:layout_toRightOf="@+id/textView18"
         android:layout_below="@+id/typebutton" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="cancelchanges"
+        android:text="Cancel Changes" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:onClick="savechanges"
+        android:text="Save Changes" />
+
+    <TextView
+        android:id="@+id/textView999"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="Click on an item to change" />
 
 </RelativeLayout>
