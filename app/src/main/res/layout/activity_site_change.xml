@@ -138,6 +138,17 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Waller"
+            android:id="@+id/site11"
+            android:layout_below="@+id/site10"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="false"
+            android:onClick="onSiteButtonClicked" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/othersite"
             android:id="@+id/othersite"
             android:layout_below="@+id/site10"

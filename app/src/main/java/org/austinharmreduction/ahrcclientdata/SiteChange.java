@@ -70,6 +70,10 @@ public class SiteChange extends AppCompatActivity {
                 if (checked)
                     siteclick = getString(R.string.site10);
                 break;
+            case R.id.site11:
+                if (checked)
+                    siteclick = getString(R.string.site11);
+                break;
             case R.id.othersite:
                 RadioButton sitebutton = (RadioButton) findViewById(R.id.othersite);
                 if (checked)

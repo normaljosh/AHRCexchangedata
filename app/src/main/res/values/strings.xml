@@ -40,17 +40,17 @@
     <string name="race5">Pacific Islander</string>
     <string name="race6">Multiracial</string>
     <string name="age1">18-20</string>
-    <string name="age2">20-25</string>
-    <string name="age3">25-30</string>
-    <string name="age4">30-35</string>
-    <string name="age5">35-40</string>
-    <string name="age6">40-45</string>
-    <string name="age7">45-50</string>
-    <string name="age8">50-55</string>
-    <string name="age9">55-60</string>
-    <string name="age10">60-65</string>
-    <string name="age11">65-70</string>
-    <string name="age12">75+</string>
+    <string name="age2">21-25</string>
+    <string name="age3">26-30</string>
+    <string name="age4">31-35</string>
+    <string name="age5">36-40</string>
+    <string name="age6">41-45</string>
+    <string name="age7">46-50</string>
+    <string name="age8">51-55</string>
+    <string name="age9">56-60</string>
+    <string name="age10">61-65</string>
+    <string name="age11">66-70</string>
+    <string name="age12">71+</string>
     <string name="site1">3rd &amp; Comal</string>
     <string name="site2">Cannon South</string>
     <string name="site3">Mars South</string>
@@ -61,6 +61,7 @@
     <string name="site8">Planet K</string>
     <string name="site9">Rogge/Manor</string>
     <string name="site10">St. John\'s</string>
+    <string name="site11">Waller</string>
     <string name="othersite">Other Site</string>
     <string name="blank">---</string>
 
